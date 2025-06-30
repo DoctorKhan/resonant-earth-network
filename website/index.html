@@ -11,27 +11,97 @@
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
             color: #374151;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #d1fae5 100%);
+            overflow-x: hidden;
         }
         .hero-bg {
-            background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920'); /* Unsplash - Surfing at Sunset */
-            background-size: cover;
-            background-position: center;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(255, 183, 77, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(16, 185, 129, 0.4) 0%, transparent 50%),
+                linear-gradient(135deg, rgba(16, 185, 129, 0.9), rgba(5, 150, 105, 0.8)),
+                url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920') center/cover;
             background-attachment: fixed;
-        }
-        .cta-button {
-            transition: all 0.4s ease;
-            letter-spacing: 0.025em;
-            padding: 0.75rem 2rem;
-        }
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
-        }
-        .feature-card {
-            transition: all 0.4s ease;
-            border-radius: 0.75rem;
+            position: relative;
             overflow: hidden;
         }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 30% 70%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            33% { transform: translateY(-20px) rotate(1deg); }
+            66% { transform: translateY(10px) rotate(-1deg); }
+        }
+        .cta-button {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            letter-spacing: 0.025em;
+            padding: 0.75rem 2rem;
+            box-shadow:
+                0 4px 15px rgba(34, 197, 94, 0.4),
+                0 0 20px rgba(34, 197, 94, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s;
+        }
+
+        .cta-button:hover::before {
+            left: 100%;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow:
+                0 12px 30px rgba(34, 197, 94, 0.5),
+                0 0 40px rgba(34, 197, 94, 0.25);
+        }
+        .feature-card {
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border-radius: 0.75rem;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            position: relative;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .feature-card:hover::before {
+            opacity: 1;
+        }
+
         .balanced-image {
             max-width: 500px;
             width: 100%;
@@ -40,14 +110,25 @@
             object-fit: cover;
         }
         .feature-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.18);
+            transform: translateY(-8px) rotateX(5deg);
+            box-shadow:
+                0 25px 50px rgba(0, 0, 0, 0.15),
+                0 0 30px rgba(16, 185, 129, 0.2);
         }
-        /* Custom gradient for text */
+        /* Custom gradient for text with meditation-inspired animation */
         .text-gradient {
-            background: linear-gradient(to right, #10B981, #059669);
+            background: linear-gradient(135deg, #10B981, #059669, #0891b2, #7c3aed);
+            background-size: 300% 300%;
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
+            animation: gradientShift 8s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
         }
         .section-title-underline {
             display: inline-block;
@@ -61,13 +142,28 @@
             transform: translateX(-50%);
             width: 80px;
             height: 4px;
-            background-color: #10B981; /* Tailwind green-500 */
+            background: linear-gradient(90deg, #10B981, #059669, #0891b2);
             border-radius: 2px;
+            animation: shimmer 3s ease-in-out infinite;
+        }
+
+        @keyframes shimmer {
+            0% { opacity: 1; transform: translateX(-50%) scaleX(1); }
+            50% { opacity: 0.7; transform: translateX(-50%) scaleX(1.2); }
+            100% { opacity: 1; transform: translateX(-50%) scaleX(1); }
         }
         .gradient-border {
-            border: 2px solid;
+            border: 3px solid;
             border-image-slice: 1;
-            border-image-source: linear-gradient(to right, #10B981, #059669);
+            border-image-source: linear-gradient(135deg, #22C55E, #16A34A, #059669);
+            border-radius: 0.5rem;
+            padding: 4px;
+            background: linear-gradient(135deg, #22C55E, #16A34A, #059669);
+        }
+        
+        .gradient-border img {
+            border-radius: 0.375rem;
+            display: block;
         }
         .logo-image {
             height: 40px;
@@ -114,12 +210,13 @@
             width: 32px;
             height: 32px;
             stroke: white;
-            stroke-width: 2;
+            stroke-width: 2.5;
+            filter: drop-shadow(0 1px 3px rgba(0, 0, 0, 0.3));
         }
 
         .feature-card:hover .feature-icon {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.3);
+            transform: scale(1.15) rotate(10deg);
+            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4);
         }
 
         /* Image Gallery Styles */
@@ -174,21 +271,31 @@
             z-index: 2;
         }
 
-        /* Scroll Indicator Animation */
+        /* Surf-inspired scroll indicator animation */
         .scroll-indicator {
-            animation: bounce 2s infinite;
+            animation: wave 3s ease-in-out infinite;
         }
 
-        @keyframes bounce {
-            0%, 20%, 50%, 80%, 100% {
-                transform: translateY(0) translateX(-50%);
-            }
-            40% {
-                transform: translateY(-10px) translateX(-50%);
-            }
-            60% {
-                transform: translateY(-5px) translateX(-50%);
-            }
+        @keyframes wave {
+            0%, 100% { transform: translateY(0) translateX(-50%) rotate(0deg); }
+            25% { transform: translateY(-10px) translateX(-50%) rotate(2deg); }
+            50% { transform: translateY(-5px) translateX(-50%) rotate(0deg); }
+            75% { transform: translateY(-15px) translateX(-50%) rotate(-2deg); }
+        }
+
+        /* Organic section backgrounds - improved contrast */
+        section:nth-child(even) {
+            background:
+                radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.03) 0%, transparent 50%),
+                linear-gradient(135deg, #fefefe 0%, #f8fafc 100%);
+        }
+
+        section:nth-child(odd) {
+            background:
+                radial-gradient(circle at 80% 20%, rgba(59, 130, 246, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(245, 158, 11, 0.03) 0%, transparent 50%),
+                linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 100%);
         }
 
         /* Enhanced Responsive Design */
@@ -237,8 +344,9 @@
         /* Improved Focus States for Accessibility */
         .cta-button:focus,
         nav a:focus {
-            outline: 2px solid #10B981;
+            outline: 3px solid #22C55E;
             outline-offset: 2px;
+            box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
         }
 
         /* Better Text Contrast */
@@ -247,6 +355,73 @@
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
+        }
+
+        /* Festival-inspired Palawan feature cards */
+        .palawan-feature {
+            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .palawan-feature::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .palawan-feature:hover::before {
+            opacity: 1;
+        }
+
+        .palawan-feature:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Floating elements animation */
+        .floating {
+            animation: floating 6s ease-in-out infinite;
+        }
+
+        @keyframes floating {
+            0% { transform: translate(0, 0px); }
+            50% { transform: translate(0, -15px); }
+            100% { transform: translate(0, 0px); }
+        }
+
+        /* Pulse animation for important elements */
+        .pulse-glow {
+            animation: pulseGlow 4s ease-in-out infinite;
+        }
+
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(16, 185, 129, 0.6); }
+            100% { box-shadow: 0 0 20px rgba(16, 185, 129, 0.3); }
+        }
+
+        /* Better text contrast utilities */
+        .drop-shadow-md {
+            filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.3));
+        }
+
+        .text-shadow-sm {
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+        }
+
+        .text-shadow-md {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+        }
+
+        .text-shadow-lg {
+            text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
         }
     </style>
 </head>
@@ -262,8 +437,9 @@
                 <a href="#vision" class="text-gray-600 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Our Vision</a>
                 <a href="#features" class="text-gray-600 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Features</a>
                 <a href="#palawan" class="text-gray-600 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Palawan</a>
+                <a href="tokenomics.html" class="text-gray-600 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Tokenomics</a>
                 <a href="#community" class="text-gray-600 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors">Community</a>
-                <a href="#join" class="bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full text-sm font-medium cta-button ml-2 transition-all">Join Waitlist</a>
+                <a href="#join" class="bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium cta-button ml-2 transition-all">Join Waitlist</a>
             </div>
             <!-- Mobile menu button -->
             <div class="md:hidden">
@@ -280,32 +456,33 @@
                 <a href="#vision" class="block px-3 py-2 text-gray-600 hover:text-green-600 text-sm font-medium">Our Vision</a>
                 <a href="#features" class="block px-3 py-2 text-gray-600 hover:text-green-600 text-sm font-medium">Features</a>
                 <a href="#palawan" class="block px-3 py-2 text-gray-600 hover:text-green-600 text-sm font-medium">Palawan</a>
+                <a href="tokenomics.html" class="block px-3 py-2 text-gray-600 hover:text-green-600 text-sm font-medium">Tokenomics</a>
                 <a href="#community" class="block px-3 py-2 text-gray-600 hover:text-green-600 text-sm font-medium">Community</a>
-                <a href="#join" class="block mx-3 my-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-full text-sm font-medium text-center">Join Waitlist</a>
+                <a href="#join" class="block mx-3 my-2 bg-green-600 hover:bg-green-700 text-white px-4 py-2 rounded-full text-sm font-medium text-center">Join Waitlist</a>
             </div>
         </div>
     </nav>
 
     <header class="hero-bg text-white pt-32 pb-20 md:pt-48 md:pb-32 relative">
         <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight">
-                Resonant Earth: Building a <br><span class="text-green-300">Resilient Future</span> Together.
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 leading-tight floating" style="text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);">
+                Resonant Earth: Building a <br><span class="text-gradient">Resilient Future</span> Together.
             </h1>
-            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto">
+            <p class="text-lg md:text-xl mb-8 max-w-3xl mx-auto" style="text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);">
                 A decentralized network of ecovillages harmonizing humans and habitat. Discover zero-microplastic living, Web3 community, and surf-to-soil wellness.
             </p>
-            <a href="#join" class="bg-white text-green-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg cta-button shadow-lg">
+            <a href="#join" class="bg-white text-green-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg cta-button shadow-lg pulse-glow">
                 Explore Our Vision
             </a>
             <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 scroll-indicator">
-                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.5));">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
                 </svg>
             </div>
         </div>
         <div class="wave-divider">
             <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
-                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z" class="shape-fill"></path>
+                <path d="M0,0V46.29c47.79,22.4,103.59,32.17,158,28,70.36-5.37,136.33-33.31,206.8-37.5C438.64,32.43,512.34,53.67,583,72.05c69.27,18,138.3,24.88,209.4,13.08,36.15-6,69.85-17.84,104.45-29.34C989.49,25,1113-14.29,1200,52.47V0Z" class="shape-fill"></path>
             </svg>
         </div>
     </header>
@@ -313,8 +490,8 @@
     <section class="py-16 md:py-24 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12 md:mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title-underline">The Shift is Here. Are We Ready?</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-6 section-title-underline">The Shift is Here. Are We Ready?</h2>
+                <p class="text-gray-700 max-w-2xl mx-auto text-lg">
                     Accelerating AI, environmental pressures, and outdated systems call for new ways of living, working, and connecting. Resonant Earth is our response.
                 </p>
             </div>
@@ -364,8 +541,8 @@
         <div class="eco-pattern"></div>
         <div class="container mx-auto px-6 relative z-10">
             <div class="text-center mb-12 md:mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title-underline">Our Vision: A Thriving Network State</h2>
-                <p class="text-gray-600 max-w-2xl mx-auto text-lg">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-6 section-title-underline">Our Vision: A Thriving Network State</h2>
+                <p class="text-gray-700 max-w-2xl mx-auto text-lg">
                     Resonant Earth is more than just ecovillages; it's a blueprint for a decentralized, resilient civilization.
                 </p>
             </div>
@@ -377,7 +554,7 @@
                         </svg>
                     </div>
                     <h4 class="text-xl font-semibold mb-2 text-center text-green-700">Harmonize with Habitat</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed">Creating symbiotic relationships between human communities and their ecosystems, with a core commitment to zero-microplastic living, verified on-chain.</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Creating symbiotic relationships between human communities and their ecosystems, with a core commitment to zero-microplastic living, verified on-chain.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-lg feature-card">
                     <div class="feature-icon">
@@ -386,7 +563,7 @@
                         </svg>
                     </div>
                     <h4 class="text-xl font-semibold mb-2 text-center text-green-700">Decentralized Sovereignty</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed">Empowering individuals and local nodes through Web3 governance, transparent data, and community-owned infrastructure. Building a true network state.</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Empowering individuals and local nodes through Web3 governance, transparent data, and community-owned infrastructure. Building a true network state.</p>
                 </div>
                 <div class="bg-white p-6 rounded-lg shadow-lg feature-card">
                     <div class="feature-icon">
@@ -395,40 +572,40 @@
                         </svg>
                     </div>
                     <h4 class="text-xl font-semibold mb-2 text-center text-green-700">Surf-to-Soil Wellness</h4>
-                    <p class="text-gray-600 text-sm leading-relaxed">Integrating physical vitality (surfing, martial arts), mindful practices, and nourishing, locally-grown food for holistic well-being.</p>
+                    <p class="text-gray-700 text-sm leading-relaxed">Integrating physical vitality (surfing, martial arts), mindful practices, and nourishing, locally-grown food for holistic well-being.</p>
                 </div>
             </div>
         </div>
         <div class="gradient-overlay"></div>
     </section>
 
-    <section id="features" class="py-16 md:py-24 bg-green-700 text-white">
+    <section id="features" class="py-16 md:py-24 bg-green-800 text-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12 md:mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title-underline text-white">Key Features of Resonant Earth</h2>
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-6 section-title-underline text-white text-shadow-md">Key Features of Resonant Earth</h2>
                 <style>
                     #features .section-title-underline::after {
                         background-color: white !important;
                     }
                 </style>
-                <p class="max-w-2xl mx-auto text-lg text-green-100">What makes Resonant Earth unique and resilient.</p>
+                <p class="max-w-2xl mx-auto text-lg text-green-100 text-shadow-sm">What makes Resonant Earth unique and resilient.</p>
             </div>
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg shadow-lg feature-card border border-white/20">
-                    <h4 class="text-xl font-semibold mb-2">Zero Microplastic KPI</h4>
-                    <p class="text-sm text-green-50 leading-relaxed">Verifiable <1 µg/L microplastics in water, reported on-chain via Chainlink oracles. Radical transparency.</p>
+                <div class="bg-white/20 backdrop-blur-md p-6 rounded-lg shadow-lg feature-card border border-white/40">
+                    <h4 class="text-xl font-semibold mb-2 text-white drop-shadow-md text-shadow-md">Zero Microplastic KPI</h4>
+                    <p class="text-sm text-green-100 leading-relaxed text-shadow-sm">Verifiable <1 µg/L microplastics in water, reported on-chain via Chainlink oracles. Radical transparency.</p>
                 </div>
-                <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg shadow-lg feature-card border border-white/20">
-                    <h4 class="text-xl font-semibold mb-2">Web3 Native Governance</h4>
-                    <p class="text-sm text-green-50 leading-relaxed">OP-Stack L2 for tokenized bookings, community voting, and decentralized treasury management.</p>
+                <div class="bg-white/20 backdrop-blur-md p-6 rounded-lg shadow-lg feature-card border border-white/40">
+                    <h4 class="text-xl font-semibold mb-2 text-white drop-shadow-md text-shadow-md">Web3 Native Governance</h4>
+                    <p class="text-sm text-green-100 leading-relaxed text-shadow-sm">OP-Stack L2 for tokenized bookings, community voting, and decentralized treasury management.</p>
                 </div>
-                <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg shadow-lg feature-card border border-white/20">
-                    <h4 class="text-xl font-semibold mb-2">Resilient Nodes</h4>
-                    <p class="text-sm text-green-50 leading-relaxed">Ecovillages with organic farms, permaculture, renewable energy, and low-tox bamboo/adobe infrastructure.</p>
+                <div class="bg-white/20 backdrop-blur-md p-6 rounded-lg shadow-lg feature-card border border-white/40">
+                    <h4 class="text-xl font-semibold mb-2 text-white drop-shadow-md text-shadow-md">Resilient Nodes</h4>
+                    <p class="text-sm text-green-100 leading-relaxed text-shadow-sm">Ecovillages with organic farms, permaculture, renewable energy, and low-tox bamboo/adobe infrastructure.</p>
                 </div>
-                <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg shadow-lg feature-card border border-white/20">
-                    <h4 class="text-xl font-semibold mb-2">Global Community</h4>
-                    <p class="text-sm text-green-50 leading-relaxed">A growing network of contributors, future residents, and partners dedicated to building a better future.</p>
+                <div class="bg-white/20 backdrop-blur-md p-6 rounded-lg shadow-lg feature-card border border-white/40">
+                    <h4 class="text-xl font-semibold mb-2 text-white drop-shadow-md text-shadow-md">Global Community</h4>
+                    <p class="text-sm text-green-100 leading-relaxed text-shadow-sm">A growing network of contributors, future residents, and partners dedicated to building a better future.</p>
                 </div>
             </div>
         </div>
@@ -437,38 +614,38 @@
     <section class="py-16 md:py-24">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12 md:mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title-underline">Our Journey & How You Can Participate</h2>
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-6 section-title-underline">Our Journey & How You Can Participate</h2>
             </div>
             <div class="max-w-4xl mx-auto">
                 <div class="relative">
                     <div class="hidden md:block absolute top-0 bottom-0 left-1/2 w-0.5 bg-green-300"></div>
                     <div class="md:flex md:items-center md:mb-12">
                         <div class="md:w-1/2 md:pr-8 text-center md:text-right mb-4 md:mb-0">
-                            <div class="p-4 bg-green-500 text-white rounded-full inline-block shadow-md">
+                            <div class="p-4 bg-green-600 text-white rounded-full inline-block shadow-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" /></svg>
                             </div>
                             <h4 class="text-xl font-semibold mt-2 text-green-700">Phase 0: Community (Now - Oct 2025)</h4>
-                            <p class="text-gray-600 text-sm">Growing our digital community, launching test-net, publishing oracle specs.</p>
+                            <p class="text-gray-700 text-sm">Growing our digital community, launching test-net, publishing oracle specs.</p>
                         </div>
                         <div class="md:w-1/2 md:pl-8"></div>
                     </div>
                     <div class="md:flex md:items-center md:flex-row-reverse md:mb-12">
                         <div class="md:w-1/2 md:pl-8 text-center md:text-left mb-4 md:mb-0">
-                             <div class="p-4 bg-green-500 text-white rounded-full inline-block shadow-md">
+                             <div class="p-4 bg-green-600 text-white rounded-full inline-block shadow-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg>
                             </div>
                             <h4 class="text-xl font-semibold mt-2 text-green-700">Phase 1: Bali Villa Pilot (Dec 2025 - Jun 2026)</h4>
-                            <p class="text-gray-600 text-sm">Launching our first physical node, running retreats, main-net token & booking dApp.</p>
+                            <p class="text-gray-700 text-sm">Launching our first physical node, running retreats, main-net token & booking dApp.</p>
                         </div>
                         <div class="md:w-1/2 md:pr-8"></div>
                     </div>
                     <div class="md:flex md:items-center">
                         <div class="md:w-1/2 md:pr-8 text-center md:text-right mb-4 md:mb-0">
-                            <div class="p-4 bg-green-500 text-white rounded-full inline-block shadow-md">
+                            <div class="p-4 bg-green-600 text-white rounded-full inline-block shadow-lg">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" /></svg>
                             </div>
                             <h4 class="text-xl font-semibold mt-2 text-green-700">Phase 2: Palawan Ecovillage (Jul 2026 - Dec 2027)</h4>
-                            <p class="text-gray-600 text-sm">Building our flagship 20-bed ecovillage, first on-chain water KPI report.</p>
+                            <p class="text-gray-700 text-sm">Building our flagship 20-bed ecovillage, first on-chain water KPI report.</p>
                         </div>
                         <div class="md:w-1/2 md:pl-8"></div>
                     </div>
@@ -484,8 +661,8 @@
     <section id="palawan" class="py-16 md:py-24 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">Palawan Flagship Ecovillage</h2>
-                <p class="text-gray-600 max-w-3xl mx-auto text-lg">
+                <h2 class="text-3xl md:text-4xl font-extrabold mb-6 text-gray-800">Palawan Flagship Ecovillage</h2>
+                <p class="text-gray-700 max-w-3xl mx-auto text-lg">
                     Our flagship 20-bed ecovillage in Palawan, Philippines will serve as the blueprint for regenerative living.
                     Featuring cutting-edge sustainability systems and holistic wellness facilities.
                 </p>
@@ -494,9 +671,21 @@
             <div class="grid lg:grid-cols-2 gap-12 items-center">
                 <!-- Image Section -->
                 <div class="relative">
-                    <img src="assets/palawan3.png" alt="Palawan Ecovillage Master Plan" class="rounded-lg shadow-xl w-full">
-                    <div class="absolute top-4 left-4 bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+                    <div class="gradient-border mb-6">
+                        <img src="assets/palawan3.png" alt="Palawan Ecovillage Master Plan" class="rounded-lg w-full">
+                    </div>
+                    <div class="absolute top-4 left-4 bg-green-600 text-white px-3 py-1 rounded-full text-sm font-semibold">
                         Phase 2: Jul 2026 - Dec 2027
+                    </div>
+                    
+                    <!-- Inspirational Palawan Landscape Gallery -->
+                    <div class="grid grid-cols-2 gap-4 mt-6">
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=300" alt="Palawan Pristine Beach" class="w-full h-32 object-cover rounded-lg">
+                        </div>
+                        <div class="gallery-image">
+                            <img src="https://images.unsplash.com/photo-1573790387438-4da905039392?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=200&w=300" alt="Palawan Tropical Forest" class="w-full h-32 object-cover rounded-lg">
+                        </div>
                     </div>
                 </div>
 
@@ -504,40 +693,40 @@
                 <div class="space-y-6">
                     <h3 class="text-2xl font-bold text-gray-800 mb-6">Ecovillage Features</h3>
                     <div class="grid gap-4">
-                        <div class="flex items-start space-x-3 p-4 bg-green-50 rounded-lg border border-green-100">
-                            <div class="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold">1</div>
+                        <div class="flex items-start space-x-3 p-4 bg-green-50 rounded-lg border border-green-100 palawan-feature">
+                            <div class="flex-shrink-0 w-8 h-8 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold floating">1</div>
                             <div>
                                 <h4 class="font-semibold text-gray-800">Surf-to-Soil Wellness Center</h4>
                                 <p class="text-gray-600 text-sm">Integrated wellness facility combining physical training, recovery, and holistic health practices.</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start space-x-3 p-4 bg-blue-50 rounded-lg border border-blue-100">
-                            <div class="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold">2</div>
+                        <div class="flex items-start space-x-3 p-4 bg-blue-50 rounded-lg border border-blue-100 palawan-feature">
+                            <div class="flex-shrink-0 w-8 h-8 bg-blue-500 text-white rounded-full flex items-center justify-center text-sm font-bold floating">2</div>
                             <div>
                                 <h4 class="font-semibold text-gray-800">Surf School & Eco Shop</h4>
                                 <p class="text-gray-600 text-sm">Professional surf instruction and sustainable gear retail supporting local ocean conservation.</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start space-x-3 p-4 bg-purple-50 rounded-lg border border-purple-100">
-                            <div class="flex-shrink-0 w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold">3</div>
+                        <div class="flex items-start space-x-3 p-4 bg-purple-50 rounded-lg border border-purple-100 palawan-feature">
+                            <div class="flex-shrink-0 w-8 h-8 bg-purple-500 text-white rounded-full flex items-center justify-center text-sm font-bold floating">3</div>
                             <div>
                                 <h4 class="font-semibold text-gray-800">Meditation & Mindfulness Pavilion</h4>
                                 <p class="text-gray-600 text-sm">Dedicated space for contemplative practices, yoga, and spiritual development.</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start space-x-3 p-4 bg-orange-50 rounded-lg border border-orange-100">
-                            <div class="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold">4</div>
+                        <div class="flex items-start space-x-3 p-4 bg-orange-50 rounded-lg border border-orange-100 palawan-feature">
+                            <div class="flex-shrink-0 w-8 h-8 bg-orange-500 text-white rounded-full flex items-center justify-center text-sm font-bold floating">4</div>
                             <div>
                                 <h4 class="font-semibold text-gray-800">Fire Circle Storytelling Zone</h4>
                                 <p class="text-gray-600 text-sm">Traditional gathering space for community bonding, cultural exchange, and evening ceremonies.</p>
                             </div>
                         </div>
 
-                        <div class="flex items-start space-x-3 p-4 bg-red-50 rounded-lg border border-red-100">
-                            <div class="flex-shrink-0 w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center text-sm font-bold">5</div>
+                        <div class="flex items-start space-x-3 p-4 bg-red-50 rounded-lg border border-red-100 palawan-feature">
+                            <div class="flex-shrink-0 w-8 h-8 bg-red-500 text-white rounded-full flex items-center justify-center text-sm font-bold floating">5</div>
                             <div>
                                 <h4 class="font-semibold text-gray-800">Festival & Community Gathering Space</h4>
                                 <p class="text-gray-600 text-sm">Large outdoor venue for celebrations, workshops, and community events.</p>
@@ -549,26 +738,26 @@
 
             <!-- Second Row of Features -->
             <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-12">
-                <div class="text-center p-6 bg-teal-50 rounded-lg border border-teal-100">
-                    <div class="w-12 h-12 bg-teal-500 text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4">6</div>
+                <div class="text-center p-6 bg-teal-50 rounded-lg border border-teal-100 palawan-feature">
+                    <div class="w-12 h-12 bg-teal-500 text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4 floating">6</div>
                     <h4 class="font-semibold text-gray-800 mb-2">Group Dining & Market Area</h4>
                     <p class="text-gray-600 text-sm">Community kitchen and local market showcasing farm-to-table dining experiences.</p>
                 </div>
 
-                <div class="text-center p-6 bg-emerald-50 rounded-lg border border-emerald-100">
-                    <div class="w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4">7</div>
+                <div class="text-center p-6 bg-emerald-50 rounded-lg border border-emerald-100 palawan-feature">
+                    <div class="w-12 h-12 bg-emerald-500 text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4 floating">7</div>
                     <h4 class="font-semibold text-gray-800 mb-2">Permaculture Farm & Food Forest</h4>
                     <p class="text-gray-600 text-sm">Regenerative agriculture systems providing fresh, organic food for the community.</p>
                 </div>
 
-                <div class="text-center p-6 bg-cyan-50 rounded-lg border border-cyan-100">
-                    <div class="w-12 h-12 bg-cyan-500 text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4">8</div>
+                <div class="text-center p-6 bg-cyan-50 rounded-lg border border-cyan-100 palawan-feature">
+                    <div class="w-12 h-12 bg-cyan-500 text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4 floating">8</div>
                     <h4 class="font-semibold text-gray-800 mb-2">Zero Microplastic Water Center</h4>
                     <p class="text-gray-600 text-sm">Advanced filtration and monitoring systems ensuring <1 µg/L microplastic compliance.</p>
                 </div>
 
-                <div class="text-center p-6 bg-yellow-50 rounded-lg border border-yellow-100">
-                    <div class="w-12 h-12 bg-yellow-500 text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4">9</div>
+                <div class="text-center p-6 bg-yellow-50 rounded-lg border border-yellow-100 palawan-feature">
+                    <div class="w-12 h-12 bg-yellow-500 text-white rounded-full flex items-center justify-center text-lg font-bold mx-auto mb-4 floating">9</div>
                     <h4 class="font-semibold text-gray-800 mb-2">Renewable Energy Systems</h4>
                     <p class="text-gray-600 text-sm">Solar microgrids and sustainable energy infrastructure powering the entire village.</p>
                 </div>
@@ -576,9 +765,9 @@
 
             <!-- Call to Action -->
             <div class="text-center mt-12">
-                <div class="bg-gradient-to-r from-green-500 to-blue-500 text-white p-8 rounded-lg shadow-xl">
-                    <h3 class="text-2xl font-bold mb-4">Be Part of the Palawan Vision</h3>
-                    <p class="text-lg mb-6 opacity-90">Join our community and help shape the future of regenerative living in paradise.</p>
+                <div class="bg-gradient-to-r from-green-600 to-blue-600 text-white p-8 rounded-lg shadow-xl">
+                    <h3 class="text-2xl font-bold mb-4 text-shadow-md">Be Part of the Palawan Vision</h3>
+                    <p class="text-lg mb-6 opacity-95 text-shadow-sm">Join our community and help shape the future of regenerative living in paradise.</p>
                     <a href="#join" class="bg-white text-green-600 hover:bg-gray-100 font-bold py-3 px-8 rounded-full text-lg transition-all shadow-lg">
                         Join the Movement
                     </a>
@@ -590,8 +779,8 @@
     <section id="community" class="py-16 md:py-24 bg-gray-100">
         <div class="container mx-auto px-6 text-center">
             <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=600" alt="Community in Nature" class="rounded-lg shadow-xl mb-8 mx-auto" onerror="this.src='https://placehold.co/600x300/cccccc/1F2937?text=Image+Not+Available'">
-            <h2 class="text-3xl md:text-4xl font-bold mb-4 section-title-underline">Be Part of the Resonant Earth Movement</h2>
-            <p class="text-gray-600 max-w-xl mx-auto mb-8 text-lg">
+            <h2 class="text-3xl md:text-4xl font-extrabold mb-6 section-title-underline">Be Part of the Resonant Earth Movement</h2>
+            <p class="text-gray-700 max-w-xl mx-auto mb-8 text-lg">
                 Whether you're an innovator, investor, wellness enthusiast, or simply believe in a better future, there's a place for you in Resonant Earth.
             </p>
             
@@ -608,7 +797,7 @@
             </div>
             
             <div id="join" class="flex flex-col md:flex-row gap-4 justify-center items-center">
-                <a href="mailto:contact@resonantearth.network?subject=Waitlist%20Interest" class="bg-green-500 hover:bg-green-600 text-white font-bold py-4 px-10 rounded-full text-lg cta-button shadow-lg inline-flex items-center gap-2 transition-all">
+                <a href="mailto:contact@resonantearth.network?subject=Waitlist%20Interest" class="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-10 rounded-full text-lg cta-button shadow-lg inline-flex items-center gap-2 transition-all">
                     <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path>
                     </svg>
@@ -697,18 +886,36 @@
             }
         });
 
-        // Add loading animation for images
+        // Enhanced image loading with better error handling
         document.querySelectorAll('img').forEach(img => {
+            // Add loading attribute for better performance
+            img.setAttribute('loading', 'lazy');
+            
             img.addEventListener('load', function() {
                 this.style.opacity = '1';
                 this.style.transform = 'scale(1)';
+                this.classList.add('loaded');
+            });
+
+            img.addEventListener('error', function() {
+                // Better fallback for failed images
+                console.warn('Failed to load image:', this.src);
+                this.style.opacity = '0.5';
+                this.style.filter = 'grayscale(100%)';
             });
 
             // Set initial state
             img.style.opacity = '0';
             img.style.transform = 'scale(0.95)';
             img.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            img.classList.add('loading');
         });
+        
+        // Performance: Optimize animations for better frame rates
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+        if (prefersReducedMotion.matches) {
+            document.documentElement.style.setProperty('--animation-duration', '0s');
+        }
     </script>
 
 </body>
