@@ -3,304 +3,427 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Token Ecosystem - Resonant Earth Network</title>
+    <title>How Our Tokens Work - Resonant Earth Network</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #065f46 0%, #047857 25%, #059669 50%, #10b981 100%);
-            color: #f0fdf4;
-            line-height: 1.8;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #d1fae5 100%);
+            color: #374151;
+            line-height: 1.7;
         }
+        
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            padding: 1rem 0;
+        }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 0 1.5rem;
         }
-        header {
-            padding: 2rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-        }
+        
         .logo {
             font-weight: 700;
-            font-size: 1.5rem;
-            color: #ffffff;
+            font-size: 1.25rem;
+            color: #1f2937;
+            display: flex;
+            align-items: center;
         }
-        .main-content {
-            padding: 4rem 0;
-        }
-        .section {
-            padding: 4rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-        }
-        .section:last-child {
-            border-bottom: none;
-        }
-        h1, h2, h3, h4 {
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 1.5rem;
-        }
-        h1 { 
-            font-size: 3rem; 
+        
+        /* Typography */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1f2937;
             text-align: center;
-            background: linear-gradient(135deg, #ffffff, #d1fae5);
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #10b981, #059669);
             background-clip: text;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        h2 { 
-            font-size: 2.5rem;
-            color: #ffffff;
-        }
-        h3 { 
-            font-size: 1.75rem;
-            color: #d1fae5;
-        }
-        h4 { 
-            font-size: 1.25rem; 
-            color: #a7f3d0;
-        }
-        p, li {
-            color: #d1fae5;
+        
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1f2937;
             margin-bottom: 1rem;
         }
-        .text-primary {
-            color: #6ee7b7;
+        
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.75rem;
         }
+        
+        h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+        
+        p {
+            color: #6b7280;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Cards and sections */
+        .hero {
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+        
+        .section {
+            padding: 4rem 0;
+        }
+        
         .card {
-            background: rgba(255, 255, 255, 0.1);
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: white;
+            border: 1px solid #e5e7eb;
             padding: 2rem;
-            border-radius: 15px;
-            margin-bottom: 2rem;
-            backdrop-filter: blur(10px);
+            border-radius: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
+        
         .card:hover {
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.2);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
         }
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 2rem;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            overflow: hidden;
-            backdrop-filter: blur(10px);
-        }
-        th, td {
-            padding: 1.5rem;
-            text-align: left;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
-        th {
-            font-weight: 600;
-            color: #ffffff;
-            background-color: rgba(16, 185, 129, 0.3);
-        }
-        ul {
-            list-style-position: inside;
-            padding-left: 1rem;
-        }
-        footer {
+        
+        /* Token cards */
+        .token-card {
+            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+            border: 2px solid #10b981;
+            padding: 2rem;
+            border-radius: 1rem;
             text-align: center;
-            padding: 2rem 0;
-            margin-top: 4rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.2);
-            color: #a7f3d0;
+            transition: all 0.3s ease;
         }
-        .grid {
-            display: grid;
-            gap: 2rem;
+        
+        .token-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
         }
-        .md\:grid-cols-2 {
-            grid-template-columns: repeat(2, minmax(0, 1fr));
+        
+        .token-symbol {
+            font-size: 2rem;
+            font-weight: 800;
+            color: #10b981;
+            margin-bottom: 0.5rem;
         }
-        .md\:grid-cols-1 {
-            grid-template-columns: repeat(1, minmax(0, 1fr));
+        
+        /* Simple lists */
+        ul {
+            list-style: none;
+            padding: 0;
         }
+        
+        li {
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #e5e7eb;
+            color: #4b5563;
+        }
+        
+        li:last-child {
+            border-bottom: none;
+        }
+        
+        /* Highlight boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        /* Utility classes */
+        .grid { display: grid; gap: 2rem; }
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
         .text-center { text-align: center; }
-        .max-w-3xl { max-width: 48rem; }
-        .mx-auto { margin-left: auto; margin-right: auto; }
+        .max-w-4xl { max-width: 56rem; }
+        .mx-auto { margin: 0 auto; }
         .flex { display: flex; }
         .justify-between { justify-content: space-between; }
         .items-center { align-items: center; }
+        .space-x-6 > * + * { margin-left: 1.5rem; }
         .h-10 { height: 2.5rem; }
         .mr-3 { margin-right: 0.75rem; }
-        .hover\:text-primary:hover { color: #6ee7b7; }
-        .transition-colors { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
+        
+        /* Links */
+        a {
+            color: #10b981;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        a:hover {
+            color: #059669;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .container { padding: 0 1rem; }
+            .hero { padding: 6rem 0 3rem; }
+        }
     </style>
 </head>
 <body>
-
-    <header>
+    <!-- Navigation -->
+    <nav>
         <div class="container">
-            <nav class="flex justify-between items-center">
-                <a href="index.html" class="logo flex items-center">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="logo">
                     <img src="assets/rn-logo.png" alt="Resonant Earth Network Logo" class="h-10 mr-3">
                     Resonant Earth Network
                 </a>
                 <div class="flex space-x-6">
-                    <a href="index.html" class="hover:text-primary transition-colors text-white">Home</a>
-                    <a href="index.html#palawan" class="hover:text-primary transition-colors text-white">Palawan</a>
-                    <a href="index.html#community" class="hover:text-primary transition-colors text-white">Community</a>
+                    <a href="index.html">Home</a>
+                    <a href="index.html#palawan">Palawan</a>
+                    <a href="index.html#community">Community</a>
                 </div>
-            </nav>
+            </div>
         </div>
-    </header>
+    </nav>
 
-    <main class="main-content container">
-        <section id="token-summary">
-            <h1>A Streamlined Token Ecosystem</h1>
-            <p class="text-center max-w-3xl mx-auto">
-                Based on the latest best practices for digital assets in mid-2025, we've revised our strategy to a robust, legally-aware three-part model. This new ecosystem is designed for simplicity, consolidated utility, and clear separation between fungible utility and non-fungible assets to maximize user engagement and build sustainable long-term value.
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>How Our Token Works</h1>
+            <p class="text-center max-w-4xl mx-auto" style="font-size: 1.25rem; color: #4b5563;">
+                We use one simple token called $ECOSTAY to power our ecovillage community. Think of it like a digital key that unlocks everything you need for sustainable living.
             </p>
-        </section>
+        </div>
+    </section>
 
-        <section id="revised-ecosystem" class="section">
-            <h2>The Revised Token Ecosystem</h2>
-            <div class="grid md:grid-cols-1 gap-8">
-                <div class="card">
-                    <h3>The Core Token: $ECOSTAY</h3>
-                    <p>The $ECOSTAY token is the primary currency and lifeblood of the ecovillage. Its value is derived from a bundle of clear and tangible utilities:</p>
-                    <ul>
-                        <li><strong>Payment & Redemption:</strong> The token’s fundamental use case. The baseline value is pegged to real-world utility: 1 $ECOSTAY token = 1 night's accommodation in a standard room during the off-season. It's also the required currency for certain on-site purchases.</li>
-                        <li><strong>Staking & Membership:</strong> By staking (locking up) $ECOSTAY, holders become "Resort Members," unlocking a tiered system of benefits.</li>
-                        <li><strong>Governance:</strong> Rights are granted to those who stake $ECOSTAY. Voting power in the Ecovillage DAO is proportional to the amount and duration of a user's stake.</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h3>The Asset Layers: Experience & Resilience NFTs</h3>
-                    <p>These remain as distinct, non-fungible assets, as their function is fundamentally different from the fungible $ECOSTAY token.</p>
-                    <ul>
-                        <li><strong>Experience NFTs:</strong> Access keys for all resort programming (e.g., yoga retreats, workshops). Post-event, they can become digital collectibles (POAPs) that may grant future perks.</li>
-                        <li><strong>Resilience NFTs:</strong> High-value, asset-backed tokens representing a deed or a legal right-to-access contract for the apocalypse storehouses. They are a distinct digital asset class.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
+    <main class="container">
+        <!-- Our Token -->
+        <section class="section">
+            <h2 class="text-center">Meet $ECOSTAY</h2>
+            <p class="text-center max-w-4xl mx-auto" style="font-size: 1.1rem; margin-bottom: 3rem;">
+                $ECOSTAY is our all-in-one token that handles everything: payments, membership benefits, and community voting. It's simple, useful, and backed by real value.
+            </p>
 
-        <section id="staking" class="section">
-            <h2>Core Mechanic: Staking $ECOSTAY for Real Utility</h2>
-            <p>The staking mechanism is based on tangible rewards for network participation, not passive income. Lock your $ECOSTAY tokens to earn "Staking Power" and unlock tiered benefits.</p>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Tier</th>
-                        <th>Staking Requirement</th>
-                        <th>Key Benefits</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Bronze</td>
-                        <td>50 $ECOSTAY</td>
-                        <td>10% discount on food & beverage, early-bird access to event announcements.</td>
-                    </tr>
-                    <tr>
-                        <td>Silver</td>
-                        <td>250 $ECOSTAY</td>
-                        <td>All Bronze benefits + priority booking for retreats, complimentary room upgrade (when available).</td>
-                    </tr>
-                    <tr>
-                        <td>Gold</td>
-                        <td>1,000 $ECOSTAY</td>
-                        <td>All Silver benefits + 1 free Event NFT airdrop per year, significant DAO voting weight.</td>
-                    </tr>
-                    <tr>
-                        <td>Platinum</td>
-                        <td>5,000 $ECOSTAY</td>
-                        <td>All Gold benefits + guaranteed access to purchase Resilience NFTs, direct line to community managers.</td>
-                    </tr>
-                </tbody>
-            </table>
-            <div class="grid md:grid-cols-2 gap-8" style="margin-top: 2rem;">
-                <div class="card">
-                    <h4>Time-Lock Multiplier</h4>
-                    <p>To reward commitment, users who lock their tokens for longer periods (e.g., 6, 12, or 24 months) will receive a multiplier on their Staking Power, granting them higher-tier benefits with fewer tokens.</p>
-                </div>
-                <div class="card">
-                    <h4>Protocol Yield</h4>
-                    <p>A percentage of resort revenues (e.g., 5% of non-$ECOSTAY payments) will be programmatically converted to $ECOSTAY on the open market and distributed pro-rata to stakers as a reward for securing the network's economic flywheel.</p>
-                </div>
-            </div>
-        </section>
+            <div class="token-card" style="max-width: 600px; margin: 0 auto;">
+                <div class="token-symbol">$ECOSTAY</div>
+                <h3>Your Key to Ecovillage Life</h3>
+                <p style="color: #059669; font-weight: 600;">One token for everything you need</p>
 
-        <section id="tokenomics" class="section">
-            <h2>Tokenomics & Allocation: $ECOSTAY</h2>
-            <p>A fair and transparent launch is critical for long-term success.</p>
-            <div class="card">
-                <p><strong>Total Supply:</strong> 100,000,000 $ECOSTAY</p>
+                <h4>What can you do with $ECOSTAY?</h4>
                 <ul>
-                    <li><strong>Community & Ecosystem (40%):</strong> For staking rewards, airdrops, community grants, and liquidity mining over a 5-year period.</li>
-                    <li><strong>Ecovillage Treasury (25%):</strong> For long-term operational costs, future development, and strategic partnerships. Governed by the DAO.</li>
-                    <li><strong>Core Team & Advisors (15%):</strong> Subject to a 4-year vesting schedule with a 1-year cliff.</li>
-                    <li><strong>Initial Supporters & Public Sale (20%):</strong> For initial fundraising, with vesting schedules to prevent immediate dumping.</li>
+                    <li>🏠 <strong>Stay Overnight:</strong> 1 $ECOSTAY = 1 night in a standard room</li>
+                    <li>🍽️ Buy meals from our community kitchen</li>
+                    <li>🧘 Book wellness services and classes</li>
+                    <li>🛒 Purchase goods from our eco-shop</li>
+                    <li>💧 Access clean, filtered water</li>
+                    <li>🗳️ Vote on community decisions (when you stake tokens)</li>
+                    <li>💰 Earn rewards by becoming a member</li>
+                    <li>🎯 Get discounts and special perks</li>
                 </ul>
-            </div>
-        </section>
 
-        <section id="roadmap" class="section">
-            <h2>Phased Implementation Roadmap (2025-2026)</h2>
-            <div class="grid md:grid-cols-2 gap-8">
-                <div class="card">
-                    <h4>Phase 1: Community & Foundation (Q3 2025)</h4>
-                    <ul>
-                        <li>Publish official Litepaper.</li>
-                        <li>Launch community channels (Discord, Telegram).</li>
-                        <li>Begin smart contract development and schedule security audit.</li>
-                        <li>Launch engagement campaign to build whitelist.</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h4>Phase 2: The $ECOSTAY Launch (Q4 2025)</h4>
-                    <ul>
-                        <li>Conduct public sale for $ECOSTAY.</li>
-                        <li>Establish initial liquidity on a DEX.</li>
-                        <li>Launch Staking Dashboard V1.</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h4>Phase 3: Utility Integration (Q1 2026)</h4>
-                    <ul>
-                        <li>Launch native booking portal with $ECOSTAY payments.</li>
-                        <li>Launch first series of Experience NFTs.</li>
-                        <li>Airdrop first benefit to Gold-tier stakers.</li>
-                    </ul>
-                </div>
-                <div class="card">
-                    <h4>Phase 4: Advanced Assets & Governance (Q2 2026)</h4>
-                    <ul>
-                        <li>Conduct first sale of Resilience NFTs.</li>
-                        <li>Launch DAO governance portal for staked users.</li>
-                    </ul>
+                <div class="highlight-box" style="margin-top: 1.5rem;">
+                    <strong>$ECOSTAY is backed by real accommodations and services you can actually use!</strong>
                 </div>
             </div>
         </section>
 
-        <section id="legal" class="section">
-            <h2>Legal & Regulatory Strategy</h2>
-            <p>This model is explicitly designed to align with the SEC's guidance from mid-2025.</p>
+        <!-- How ECOSTAY Works -->
+        <section class="section">
+            <h2 class="text-center">How $ECOSTAY Gets Its Value</h2>
             <div class="card">
-                <ul>
-                    <li><strong>Utility First:</strong> All marketing will focus on the token's utility for booking, access, and discounts. Language implying "investment" or "expectation of profit" will be strictly avoided.</li>
-                    <li><strong>No Fixed Returns:</strong> Staking yields are not guaranteed and are derived from protocol activity, consistent with SEC clarifications.</li>
-                    <li><strong>Clear Disclosures:</strong> All terms will be transparent. Users will be made aware they are participating in a network with a utility token, not purchasing a financial instrument.</li>
-                </ul>
+                <h3>🏠 Real Accommodation Value</h3>
+                <p>The foundation of $ECOSTAY's value is simple: <strong>1 $ECOSTAY = 1 night's stay</strong> in our ecovillage.</p>
+
+                <div class="highlight-box" style="background: linear-gradient(135deg, #3b82f6, #1d4ed8); margin: 2rem 0;">
+                    <h4 style="color: white;">The Base Value Promise</h4>
+                    <p style="color: white; font-size: 1.2rem;">
+                        No matter what happens in crypto markets, you can always use 1 $ECOSTAY token to stay one night in a standard room at our ecovillage.
+                    </p>
+                </div>
+
+                <h4>Plus, you can use $ECOSTAY for:</h4>
+                <div class="grid grid-2" style="margin: 1.5rem 0;">
+                    <div style="text-align: center; padding: 1rem;">
+                        <div style="font-size: 3rem;">🍽️</div>
+                        <h4>Meals & Food</h4>
+                        <p>Fresh, organic food from our gardens</p>
+                    </div>
+                    <div style="text-align: center; padding: 1rem;">
+                        <div style="font-size: 3rem;">🧘</div>
+                        <h4>Wellness Services</h4>
+                        <p>Yoga, meditation, and healing sessions</p>
+                    </div>
+                    <div style="text-align: center; padding: 1rem;">
+                        <div style="font-size: 3rem;">🛒</div>
+                        <h4>Eco Products</h4>
+                        <p>Sustainable goods and local crafts</p>
+                    </div>
+                    <div style="text-align: center; padding: 1rem;">
+                        <div style="font-size: 3rem;">💧</div>
+                        <h4>Clean Water</h4>
+                        <p>Filtered, microplastic-free water</p>
+                    </div>
+                </div>
+
+                <div class="highlight-box">
+                    <h4>Why This Matters</h4>
+                    <p>Unlike other cryptocurrencies that can go up and down wildly, $ECOSTAY is tied to real accommodations and services you can actually use. This makes it stable and practical for planning your ecovillage experience.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Membership Benefits -->
+        <section class="section">
+            <h2 class="text-center">Become a Member by Staking $ECOSTAY</h2>
+            <p class="text-center max-w-4xl mx-auto" style="margin-bottom: 3rem;">
+                When you "stake" (lock up) your $ECOSTAY tokens, you become a Resort Member and unlock special benefits. The more you stake, the better your perks!
+            </p>
+
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>🥉 Bronze Member</h3>
+                    <p style="color: #059669; font-weight: 600;">Stake 50 $ECOSTAY</p>
+                    <ul>
+                        <li>10% discount on food & drinks</li>
+                        <li>Early access to event announcements</li>
+                        <li>Member-only community chat</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🥈 Silver Member</h3>
+                    <p style="color: #059669; font-weight: 600;">Stake 250 $ECOSTAY</p>
+                    <ul>
+                        <li>All Bronze benefits</li>
+                        <li>Priority booking for retreats</li>
+                        <li>Free room upgrades (when available)</li>
+                        <li>Voting power in community decisions</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🥇 Gold Member</h3>
+                    <p style="color: #059669; font-weight: 600;">Stake 1,000 $ECOSTAY</p>
+                    <ul>
+                        <li>All Silver benefits</li>
+                        <li>1 free event ticket per year</li>
+                        <li>Strong voting power in DAO</li>
+                        <li>Access to member-only areas</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>💎 Platinum Member</h3>
+                    <p style="color: #059669; font-weight: 600;">Stake 5,000 $ECOSTAY</p>
+                    <ul>
+                        <li>All Gold benefits</li>
+                        <li>Direct line to community managers</li>
+                        <li>Exclusive access to new locations</li>
+                        <li>Revenue sharing from resort profits</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Get Tokens -->
+        <section class="section">
+            <h2 class="text-center">How to Get $ECOSTAY</h2>
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>💰 Buy $ECOSTAY</h3>
+                    <ul>
+                        <li>💵 Purchase during public token sales</li>
+                        <li>🏪 Buy directly from our website</li>
+                        <li>💱 Exchange other cryptocurrencies</li>
+                        <li>🎁 Receive as gifts from friends</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>🏆 Earn $ECOSTAY</h3>
+                    <ul>
+                        <li>🌱 Work in the community gardens</li>
+                        <li>🔧 Help with maintenance and building</li>
+                        <li>📚 Teach classes or workshops</li>
+                        <li>🤝 Refer friends to join the community</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Simple FAQ -->
+        <section class="section">
+            <h2 class="text-center">Simple Questions & Answers</h2>
+
+            <div class="card">
+                <h3>❓ What makes $ECOSTAY different from other crypto?</h3>
+                <p><strong>$ECOSTAY</strong> is backed by real accommodations! You can always use 1 token for 1 night's stay, making it practical and stable.</p>
+            </div>
+
+            <div class="card">
+                <h3>❓ Why should I trust $ECOSTAY?</h3>
+                <p>$ECOSTAY is backed by real accommodations and services that you can actually use. Plus, when you stake tokens, you get real voting power in our community decisions.</p>
+            </div>
+
+            <div class="card">
+                <h3>❓ What if I don't understand crypto?</h3>
+                <p>No problem! We'll help you learn. Think of $ECOSTAY like a digital gift card that works for everything in our ecovillage.</p>
+            </div>
+
+            <div class="card">
+                <h3>❓ Can I lose my tokens?</h3>
+                <p>We'll teach you how to keep them safe. Plus, $ECOSTAY is tied to real accommodations, so it won't lose value like other cryptocurrencies might.</p>
+            </div>
+
+            <div class="card">
+                <h3>❓ What happens if I stake my tokens?</h3>
+                <p>When you stake (lock up) your $ECOSTAY, you become a member with special benefits and voting rights. You can unstake them later if needed.</p>
+            </div>
+
+            <div class="card">
+                <h3>❓ How do I know this is legitimate?</h3>
+                <p>Our ecovillage is a real place with real accommodations. You can visit, stay, and use your tokens for actual services. It's not just digital - it's backed by physical reality!</p>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="section">
+            <div class="highlight-box" style="background: linear-gradient(135deg, #10b981, #059669);">
+                <h2 style="color: white; margin-bottom: 1rem;">Ready to Join Our Community?</h2>
+                <p style="color: white; font-size: 1.2rem; margin-bottom: 2rem;">
+                    Start by joining our waitlist to get early access to tokens and be part of building the future of sustainable living.
+                </p>
+                <a href="index.html#join" style="background: white; color: #10b981; padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; display: inline-block;">
+                    Join the Waitlist
+                </a>
             </div>
         </section>
     </main>
 
-    <footer>
+    <!-- Footer -->
+    <footer style="background: #1f2937; color: white; padding: 3rem 0; text-align: center; margin-top: 4rem;">
         <div class="container">
-            <p>&copy; 2025 Resonant Earth Network. All rights reserved.</p>
+            <p>&copy; 2024 Resonant Earth Network. Building a sustainable future together.</p>
         </div>
     </footer>
-
 </body>
 </html>
