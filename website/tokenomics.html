@@ -3,380 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tokenomics - Resonant Earth Network</title>
-    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Token Ecosystem - Resonant Earth Network</title>
+    <link rel="stylesheet" href="styles/main.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: #374151;
-            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #d1fae5 100%);
+            background-color: #000;
+            color: #f0f0f0;
+            line-height: 1.8;
         }
-        
-        .hero-bg {
-            background: 
-                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.2) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 183, 77, 0.2) 0%, transparent 50%),
-                linear-gradient(135deg, rgba(16, 185, 129, 0.1), rgba(5, 150, 105, 0.1));
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
-        
-        .token-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: all 0.3s ease;
+        header {
+            padding: 2rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
-        .token-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        .logo {
+            font-weight: 700;
+            font-size: 1.5rem;
         }
-        
-        .text-gradient {
-            background: linear-gradient(135deg, #10B981, #059669, #0891b2);
-            background-size: 300% 300%;
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientShift 8s ease infinite;
+        .main-content {
+            padding: 4rem 0;
         }
-
-        @keyframes gradientShift {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        .section {
+            padding: 4rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
         }
-        
-        .section-bg {
-            background: 
-                radial-gradient(circle at 10% 20%, rgba(16, 185, 129, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 90% 80%, rgba(168, 85, 247, 0.05) 0%, transparent 50%);
+        .section:last-child {
+            border-bottom: none;
         }
-        
-        .floating {
-            animation: floating 6s ease-in-out infinite;
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
         }
-
-        @keyframes floating {
-            0% { transform: translate(0, 0px); }
-            50% { transform: translate(0, -10px); }
-            100% { transform: translate(0, 0px); }
+        h1 { font-size: 3rem; text-align: center; }
+        h2 { font-size: 2.5rem; }
+        h3 { font-size: 1.75rem; }
+        h4 { font-size: 1.25rem; color: #00ffff; }
+        p, li {
+            color: #ccc;
+            margin-bottom: 1rem;
         }
+        .text-primary {
+            color: #00ffff;
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 2rem;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 2rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 1.5rem;
+            text-align: left;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        th {
+            font-weight: 600;
+            color: #fff;
+            background-color: rgba(0, 255, 255, 0.1);
+        }
+        ul {
+            list-style-position: inside;
+            padding-left: 1rem;
+        }
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            margin-top: 4rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #888;
+        }
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+        .md\:grid-cols-2 {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+        .md\:grid-cols-1 {
+            grid-template-columns: repeat(1, minmax(0, 1fr));
+        }
+        .text-center { text-align: center; }
+        .max-w-3xl { max-width: 48rem; }
+        .mx-auto { margin-left: auto; margin-right: auto; }
+        .flex { display: flex; }
+        .justify-between { justify-content: space-between; }
+        .items-center { align-items: center; }
+        .h-10 { height: 2.5rem; }
+        .mr-3 { margin-right: 0.75rem; }
+        .hover\:text-primary:hover { color: #00ffff; }
+        .transition-colors { transition-property: color, background-color, border-color, text-decoration-color, fill, stroke; transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1); transition-duration: 150ms; }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="bg-white/95 backdrop-blur-md shadow-sm fixed w-full z-50 top-0">
-        <div class="container mx-auto px-6 py-4">
-            <div class="flex justify-between items-center">
-                <div class="flex items-center space-x-2">
-                    <img src="assets/rn-logo.png" alt="Resonant Earth Logo" class="h-10 w-auto">
-                    <span class="text-xl font-bold text-gray-800">Resonant Earth</span>
-                </div>
-                <div class="hidden md:flex space-x-6">
-                    <a href="index.html" class="text-gray-600 hover:text-green-600 transition-colors">Home</a>
-                    <a href="#dual-token" class="text-gray-600 hover:text-green-600 transition-colors">Dual Token</a>
-                    <a href="#rise-token" class="text-gray-600 hover:text-green-600 transition-colors">$RISE</a>
-                    <a href="#vita-token" class="text-gray-600 hover:text-green-600 transition-colors">$VITA</a>
-                    <a href="#apocalypse-proof" class="text-gray-600 hover:text-green-600 transition-colors">Resilience</a>
-                </div>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-bg pt-32 pb-20 md:pt-40 md:pb-32">
-        <div class="container mx-auto px-6 text-center">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6 floating">
-                <span class="text-gradient">Apocalypse-Proof</span><br>
-                Tokenomics
-            </h1>
-            <p class="text-xl md:text-2xl mb-8 max-w-4xl mx-auto text-gray-700">
-                A dual-token ecosystem designed for long-term stability, self-sufficiency, and resilience in the face of global disruption.
+    <header>
+        <div class="container">
+            <nav class="flex justify-between items-center">
+                <a href="index.html" class="logo flex items-center">
+                    <img src="assets/rn-logo.png" alt="Resonant Earth Network Logo" class="h-10 mr-3">
+                    Resonant Earth Network
+                </a>
+                <div>
+                    <a href="index.html" class="hover:text-primary transition-colors">Home</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content container">
+        <section id="token-summary">
+            <h1>A Streamlined Token Ecosystem</h1>
+            <p class="text-center max-w-3xl mx-auto">
+                Based on the latest best practices for digital assets in mid-2025, we've revised our strategy to a robust, legally-aware three-part model. This new ecosystem is designed for simplicity, consolidated utility, and clear separation between fungible utility and non-fungible assets to maximize user engagement and build sustainable long-term value.
             </p>
-            <div class="bg-white/20 backdrop-blur-md rounded-lg p-6 max-w-3xl mx-auto">
-                <p class="text-lg text-gray-800">
-                    Our tokenomics model prioritizes a <strong>closed-loop economy</strong>, <strong>real-world value</strong>, 
-                    and <strong>community participation</strong> to create truly sustainable ecovillage networks.
-                </p>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Dual Token Overview -->
-    <section id="dual-token" class="py-20 section-bg">
-        <div class="container mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">A Dual-Token Ecosystem for Resilience</h2>
-                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-                    Two complementary tokens that separate governance from utility, ensuring stability and clear functionality.
-                </p>
-            </div>
-            
-            <div class="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto">
-                <!-- RISE Token Card -->
-                <div class="token-card rounded-2xl p-8">
-                    <div class="text-center mb-6">
-                        <div class="w-20 h-20 bg-gradient-to-br from-green-500 to-emerald-600 rounded-full flex items-center justify-center mx-auto mb-4 floating">
-                            <span class="text-2xl font-bold text-white">$RISE</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Governance Token</h3>
-                        <p class="text-gray-600">Decentralized network governance and growth</p>
-                    </div>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2">•</span>
-                            DAO voting on network decisions
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2">•</span>
-                            Staking rewards and yield generation
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2">•</span>
-                            Early access to new ecovillages
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-green-500 mr-2">•</span>
-                            Treasury allocation decisions
-                        </li>
+        <section id="revised-ecosystem" class="section">
+            <h2>The Revised Token Ecosystem</h2>
+            <div class="grid md:grid-cols-1 gap-8">
+                <div class="card">
+                    <h3>The Core Token: $ECOSTAY</h3>
+                    <p>The $ECOSTAY token is the primary currency and lifeblood of the ecovillage. Its value is derived from a bundle of clear and tangible utilities:</p>
+                    <ul>
+                        <li><strong>Payment & Redemption:</strong> The token’s fundamental use case. The baseline value is pegged to real-world utility: 1 $ECOSTAY token = 1 night's accommodation in a standard room during the off-season. It's also the required currency for certain on-site purchases.</li>
+                        <li><strong>Staking & Membership:</strong> By staking (locking up) $ECOSTAY, holders become "Resort Members," unlocking a tiered system of benefits.</li>
+                        <li><strong>Governance:</strong> Rights are granted to those who stake $ECOSTAY. Voting power in the Ecovillage DAO is proportional to the amount and duration of a user's stake.</li>
                     </ul>
                 </div>
-
-                <!-- VITA Token Card -->
-                <div class="token-card rounded-2xl p-8">
-                    <div class="text-center mb-6">
-                        <div class="w-20 h-20 bg-gradient-to-br from-blue-500 to-cyan-600 rounded-full flex items-center justify-center mx-auto mb-4 floating">
-                            <span class="text-2xl font-bold text-white">$VITA</span>
-                        </div>
-                        <h3 class="text-2xl font-bold text-gray-800 mb-2">Utility Token</h3>
-                        <p class="text-gray-600">Resource-backed internal economy</p>
-                    </div>
-                    <ul class="space-y-3 text-gray-700">
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">•</span>
-                            Pegged to essential goods & services
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">•</span>
-                            Internal ecovillage transactions
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">•</span>
-                            Earned through community labor
-                        </li>
-                        <li class="flex items-start">
-                            <span class="text-blue-500 mr-2">•</span>
-                            On-chain resource verification
-                        </li>
+                <div class="card">
+                    <h3>The Asset Layers: Experience & Resilience NFTs</h3>
+                    <p>These remain as distinct, non-fungible assets, as their function is fundamentally different from the fungible $ECOSTAY token.</p>
+                    <ul>
+                        <li><strong>Experience NFTs:</strong> Access keys for all resort programming (e.g., yoga retreats, workshops). Post-event, they can become digital collectibles (POAPs) that may grant future perks.</li>
+                        <li><strong>Resilience NFTs:</strong> High-value, asset-backed tokens representing a deed or a legal right-to-access contract for the apocalypse storehouses. They are a distinct digital asset class.</li>
                     </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- RISE Token Details -->
-    <section id="rise-token" class="py-20 bg-white">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">$RISE: Governance and Growth</h2>
-                    <p class="text-xl text-gray-600">
-                        The vehicle for decentralized governance, allowing the community to steer the future of the Resonant Earth Network.
-                    </p>
+        <section id="staking" class="section">
+            <h2>Core Mechanic: Staking $ECOSTAY for Real Utility</h2>
+            <p>The staking mechanism is based on tangible rewards for network participation, not passive income. Lock your $ECOSTAY tokens to earn "Staking Power" and unlock tiered benefits.</p>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Tier</th>
+                        <th>Staking Requirement</th>
+                        <th>Key Benefits</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Bronze</td>
+                        <td>50 $ECOSTAY</td>
+                        <td>10% discount on food & beverage, early-bird access to event announcements.</td>
+                    </tr>
+                    <tr>
+                        <td>Silver</td>
+                        <td>250 $ECOSTAY</td>
+                        <td>All Bronze benefits + priority booking for retreats, complimentary room upgrade (when available).</td>
+                    </tr>
+                    <tr>
+                        <td>Gold</td>
+                        <td>1,000 $ECOSTAY</td>
+                        <td>All Silver benefits + 1 free Event NFT airdrop per year, significant DAO voting weight.</td>
+                    </tr>
+                    <tr>
+                        <td>Platinum</td>
+                        <td>5,000 $ECOSTAY</td>
+                        <td>All Gold benefits + guaranteed access to purchase Resilience NFTs, direct line to community managers.</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="grid md:grid-cols-2 gap-8" style="margin-top: 2rem;">
+                <div class="card">
+                    <h4>Time-Lock Multiplier</h4>
+                    <p>To reward commitment, users who lock their tokens for longer periods (e.g., 6, 12, or 24 months) will receive a multiplier on their Staking Power, granting them higher-tier benefits with fewer tokens.</p>
                 </div>
-                
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Utility & Governance</h3>
-                        <div class="space-y-4">
-                            <div class="bg-green-50 p-4 rounded-lg border border-green-100">
-                                <h4 class="font-semibold text-gray-800 mb-2">DAO Voting</h4>
-                                <p class="text-gray-600 text-sm">Propose and vote on treasury allocation, new node onboarding, charter updates, and technology development.</p>
-                            </div>
-                            <div class="bg-green-50 p-4 rounded-lg border border-green-100">
-                                <h4 class="font-semibold text-gray-800 mb-2">Staking & Yield</h4>
-                                <p class="text-gray-600 text-sm">Stake tokens to secure the network and receive yield from emissions and network fees.</p>
-                            </div>
-                            <div class="bg-green-50 p-4 rounded-lg border border-green-100">
-                                <h4 class="font-semibold text-gray-800 mb-2">Access to New Projects</h4>
-                                <p class="text-gray-600 text-sm">Staking grants early access and preferential terms for new ecovillage development.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Distribution & Sustainability</h3>
-                        <div class="space-y-4">
-                            <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                                <h4 class="font-semibold text-gray-800 mb-2">Community Airdrop</h4>
-                                <p class="text-gray-600 text-sm">Fair launch with significant portion airdropped to early community members and contributors.</p>
-                            </div>
-                            <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                                <h4 class="font-semibold text-gray-800 mb-2">Team & Advisors</h4>
-                                <p class="text-gray-600 text-sm">Vested allocation with multi-year lock-up to align long-term incentives.</p>
-                            </div>
-                            <div class="bg-blue-50 p-4 rounded-lg border border-blue-100">
-                                <h4 class="font-semibold text-gray-800 mb-2">DAO Treasury</h4>
-                                <p class="text-gray-600 text-sm">Substantial portion for ecosystem grants, development, and operations managed by token holders.</p>
-                            </div>
-                        </div>
-                    </div>
+                <div class="card">
+                    <h4>Protocol Yield</h4>
+                    <p>A percentage of resort revenues (e.g., 5% of non-$ECOSTAY payments) will be programmatically converted to $ECOSTAY on the open market and distributed pro-rata to stakers as a reward for securing the network's economic flywheel.</p>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- VITA Token Details -->
-    <section id="vita-token" class="py-20 section-bg">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto">
-                <div class="text-center mb-12">
-                    <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-800">$VITA: The Lifeblood of the Ecovillage Economy</h2>
-                    <p class="text-xl text-gray-600">
-                        A stable medium of exchange for the internal, closed-loop economy, insulated from external market volatility.
-                    </p>
-                </div>
-                
-                <div class="bg-white/80 backdrop-blur-md rounded-2xl p-8 mb-12">
-                    <h3 class="text-2xl font-bold mb-6 text-gray-800 text-center">Resource-Backed Stability</h3>
-                    <div class="bg-gradient-to-r from-cyan-50 to-blue-50 p-6 rounded-lg border border-cyan-100">
-                        <h4 class="font-bold text-gray-800 mb-3 text-center">1 $VITA = Essential Basket</h4>
-                        <div class="grid md:grid-cols-3 gap-4 text-center">
-                            <div>
-                                <div class="text-2xl mb-2">💧</div>
-                                <p class="text-sm text-gray-600">Clean, potable water</p>
-                            </div>
-                            <div>
-                                <div class="text-2xl mb-2">🍽️</div>
-                                <p class="text-sm text-gray-600">Standard community meal</p>
-                            </div>
-                            <div>
-                                <div class="text-2xl mb-2">⏰</div>
-                                <p class="text-sm text-gray-600">One hour of general labor</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="grid md:grid-cols-2 gap-12">
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Utility</h3>
-                        <div class="space-y-4">
-                            <div class="bg-cyan-50 p-4 rounded-lg border border-cyan-100">
-                                <h4 class="font-semibold text-gray-800 mb-2">Internal Exchange</h4>
-                                <p class="text-gray-600 text-sm">Pay for food, accommodations, wellness services, courses, and artisan goods within ecovillages.</p>
-                            </div>
-                            <div class="bg-cyan-50 p-4 rounded-lg border border-cyan-100">
-                                <h4 class="font-semibold text-gray-800 mb-2">Labor & Contributions</h4>
-                                <p class="text-gray-600 text-sm">Earn $VITA for farming, maintenance, teaching, and community service.</p>
-                            </div>
-                            <div class="bg-cyan-50 p-4 rounded-lg border border-cyan-100">
-                                <h4 class="font-semibold text-gray-800 mb-2">Micro-Economies</h4>
-                                <p class="text-gray-600 text-sm">Facilitate specialized goods and services exchange between residents.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div>
-                        <h3 class="text-2xl font-bold mb-6 text-gray-800">Minting & Burning</h3>
-                        <div class="space-y-4">
-                            <div class="bg-emerald-50 p-4 rounded-lg border border-emerald-100">
-                                <h4 class="font-semibold text-gray-800 mb-2">Minting</h4>
-                                <p class="text-gray-600 text-sm">$VITA is minted as essential goods and services are produced and verified on-chain.</p>
-                            </div>
-                            <div class="bg-red-50 p-4 rounded-lg border border-red-100">
-                                <h4 class="font-semibold text-gray-800 mb-2">Burning</h4>
-                                <p class="text-gray-600 text-sm">$VITA is burned when redeemed for goods and services, creating balanced circular flow.</p>
-                            </div>
-                            <div class="bg-purple-50 p-4 rounded-lg border border-purple-100">
-                                <h4 class="font-semibold text-gray-800 mb-2">On-Chain Verification</h4>
-                                <p class="text-gray-600 text-sm">Chainlink oracles provide transparent, verifiable backing for token value.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <section id="tokenomics" class="section">
+            <h2>Tokenomics & Allocation: $ECOSTAY</h2>
+            <p>A fair and transparent launch is critical for long-term success.</p>
+            <div class="card">
+                <p><strong>Total Supply:</strong> 100,000,000 $ECOSTAY</p>
+                <ul>
+                    <li><strong>Community & Ecosystem (40%):</strong> For staking rewards, airdrops, community grants, and liquidity mining over a 5-year period.</li>
+                    <li><strong>Ecovillage Treasury (25%):</strong> For long-term operational costs, future development, and strategic partnerships. Governed by the DAO.</li>
+                    <li><strong>Core Team & Advisors (15%):</strong> Subject to a 4-year vesting schedule with a 1-year cliff.</li>
+                    <li><strong>Initial Supporters & Public Sale (20%):</strong> For initial fundraising, with vesting schedules to prevent immediate dumping.</li>
+                </ul>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Apocalypse-Proof System -->
-    <section id="apocalypse-proof" class="py-20 bg-gradient-to-br from-gray-900 to-gray-800 text-white">
-        <div class="container mx-auto px-6">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-3xl md:text-4xl font-bold mb-8">An Apocalypse-Proof System in Action</h2>
-                <p class="text-xl mb-12 text-gray-300">
-                    In crisis scenarios where external supply chains and financial systems are disrupted, 
-                    our tokenomics enable ecovillages to function as self-sufficient, closed-loop economies.
-                </p>
-                
-                <div class="grid md:grid-cols-2 gap-8">
-                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg">
-                        <h3 class="text-xl font-bold mb-4 text-green-400">Intrinsic Value</h3>
-                        <p class="text-gray-300">$VITA value depends on real, life-sustaining resources produced by the community, not external markets.</p>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg">
-                        <h3 class="text-xl font-bold mb-4 text-blue-400">Incentivized Labor</h3>
-                        <p class="text-gray-300">Earning $VITA for essential tasks ensures food production, water purification, and maintenance are fulfilled.</p>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg">
-                        <h3 class="text-xl font-bold mb-4 text-purple-400">Decentralized Allocation</h3>
-                        <p class="text-gray-300">$RISE holders make collective decisions on resource allocation to address community needs.</p>
-                    </div>
-                    <div class="bg-white/10 backdrop-blur-md p-6 rounded-lg">
-                        <h3 class="text-xl font-bold mb-4 text-yellow-400">Inter-Node Trade</h3>
-                        <p class="text-gray-300">Token system facilitates fair trade between ecovillage nodes, enabling specialization and mutual support.</p>
-                    </div>
+        <section id="roadmap" class="section">
+            <h2>Phased Implementation Roadmap (2025-2026)</h2>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="card">
+                    <h4>Phase 1: Community & Foundation (Q3 2025)</h4>
+                    <ul>
+                        <li>Publish official Litepaper.</li>
+                        <li>Launch community channels (Discord, Telegram).</li>
+                        <li>Begin smart contract development and schedule security audit.</li>
+                        <li>Launch engagement campaign to build whitelist.</li>
+                    </ul>
                 </div>
-                
-                <div class="mt-12 bg-gradient-to-r from-green-500/20 to-blue-500/20 p-8 rounded-lg backdrop-blur-md">
-                    <h3 class="text-2xl font-bold mb-4">Truly Resilient Economics</h3>
-                    <p class="text-lg text-gray-200">
-                        By integrating robust governance with resource-backed currency, the Resonant Earth Network creates 
-                        an enduring economic model capable of weathering unforeseen global challenges.
-                    </p>
+                <div class="card">
+                    <h4>Phase 2: The $ECOSTAY Launch (Q4 2025)</h4>
+                    <ul>
+                        <li>Conduct public sale for $ECOSTAY.</li>
+                        <li>Establish initial liquidity on a DEX.</li>
+                        <li>Launch Staking Dashboard V1.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Phase 3: Utility Integration (Q1 2026)</h4>
+                    <ul>
+                        <li>Launch native booking portal with $ECOSTAY payments.</li>
+                        <li>Launch first series of Experience NFTs.</li>
+                        <li>Airdrop first benefit to Gold-tier stakers.</li>
+                    </ul>
+                </div>
+                <div class="card">
+                    <h4>Phase 4: Advanced Assets & Governance (Q2 2026)</h4>
+                    <ul>
+                        <li>Conduct first sale of Resilience NFTs.</li>
+                        <li>Launch DAO governance portal for staked users.</li>
+                    </ul>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-6 text-center">
-            <div class="mb-8">
-                <img src="assets/rn-logo.png" alt="Resonant Earth Logo" class="h-12 w-auto mx-auto mb-4">
-                <h3 class="text-xl font-bold mb-2">Resonant Earth Network</h3>
-                <p class="text-gray-400">Building resilient, sustainable communities for the future</p>
+        <section id="legal" class="section">
+            <h2>Legal & Regulatory Strategy</h2>
+            <p>This model is explicitly designed to align with the SEC's guidance from mid-2025.</p>
+            <div class="card">
+                <ul>
+                    <li><strong>Utility First:</strong> All marketing will focus on the token's utility for booking, access, and discounts. Language implying "investment" or "expectation of profit" will be strictly avoided.</li>
+                    <li><strong>No Fixed Returns:</strong> Staking yields are not guaranteed and are derived from protocol activity, consistent with SEC clarifications.</li>
+                    <li><strong>Clear Disclosures:</strong> All terms will be transparent. Users will be made aware they are participating in a network with a utility token, not purchasing a financial instrument.</li>
+                </ul>
             </div>
-            <div class="flex justify-center space-x-6 mb-8">
-                <a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a>
-                <a href="index.html#palawan" class="text-gray-400 hover:text-white transition-colors">Palawan</a>
-                <a href="index.html#community" class="text-gray-400 hover:text-white transition-colors">Community</a>
-                <a href="#" class="text-gray-400 hover:text-white transition-colors">Whitepaper</a>
-            </div>
-            <p class="text-gray-500">&copy; 2024 Resonant Earth Network. Building a resilient future together.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Resonant Earth Network. All rights reserved.</p>
         </div>
     </footer>
 
-    <script>
-        // Smooth scroll for navigation links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetId = this.getAttribute('href');
-                const targetElement = document.querySelector(targetId);
-                if (targetElement) {
-                    const navHeight = document.querySelector('nav').offsetHeight;
-                    const targetPosition = targetElement.offsetTop - navHeight - 20;
-
-                    window.scrollTo({
-                        top: targetPosition,
-                        behavior: 'smooth'
-                    });
-                }
-            });
-        });
-    </script>
 </body>
 </html>
