@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How Our Tokens Work - Resonant Earth Network</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
@@ -189,29 +190,59 @@
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="logo">
-                    <img src="assets/rn-logo.png" alt="Resonant Earth Network Logo" class="h-10 mr-3">
-                    Resonant Earth Network
-                </a>
-                <div class="flex space-x-6">
-                    <a href="index.html">Home</a>
-                    <a href="index.html#palawan">Palawan</a>
-                    <a href="index.html#community">Community</a>
-                </div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/rn-logo.png" alt="Resonant Earth Network Logo">
+                Resonant Earth Network
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html#vision" class="nav-link">Vision</a>
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="index.html#palawan" class="nav-link">Palawan</a>
+                <a href="business-model.html" class="nav-link">Business</a>
+                <a href="water-quality.html" class="nav-link">Water Quality</a>
+                <a href="tokenomics.html" class="nav-link active">Tokenomics</a>
+                <a href="index.html#community" class="nav-link">Community</a>
+                <a href="index.html#join" class="nav-link cta-button">Join Waitlist</a>
             </div>
+
+            <div class="mobile-menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="mobile-nav">
+            <a href="index.html#vision" class="mobile-nav-link">Vision</a>
+            <a href="index.html#features" class="mobile-nav-link">Features</a>
+            <a href="index.html#palawan" class="mobile-nav-link">Palawan</a>
+            <a href="business-model.html" class="mobile-nav-link">Business Model</a>
+            <a href="water-quality.html" class="mobile-nav-link">Water Quality</a>
+            <a href="tokenomics.html" class="mobile-nav-link active">Tokenomics</a>
+            <a href="index.html#community" class="mobile-nav-link">Community</a>
+            <a href="index.html#join" class="mobile-nav-link cta-button" style="margin: 1rem 2rem; text-align: center; border-radius: 2rem;">Join Waitlist</a>
         </div>
     </nav>
 
     <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h1>How Our Token Works</h1>
-            <p class="text-center max-w-4xl mx-auto" style="font-size: 1.25rem; color: #4b5563;">
-                We use one simple token called $ECOSTAY to power our ecovillage community. Think of it like a digital key that unlocks everything you need for sustainable living.
+            <h1>💰 How Our Token Works</h1>
+            <p class="text-center mx-auto" style="font-size: 1.25rem; color: #4b5563; max-width: 800px;">
+                We use one simple token called <strong>$ECOSTAY</strong> to power our ecovillage community.
+                Think of it like a digital key that unlocks everything you need for sustainable living.
             </p>
+
+            <div style="background: linear-gradient(135deg, #10b981, #059669); color: white; padding: 2rem; border-radius: 1rem; margin: 3rem auto; max-width: 600px; text-align: center;">
+                <h3 style="color: white; margin-bottom: 1rem;">🏠 Core Value Promise</h3>
+                <p style="color: white; font-size: 1.3rem; margin: 0;">
+                    <strong>1 $ECOSTAY = 1 Night's Stay</strong><br>
+                    <span style="font-size: 1rem; opacity: 0.9;">Always redeemable for real accommodation</span>
+                </p>
+            </div>
         </div>
     </section>
 
@@ -420,10 +451,48 @@
     </main>
 
     <!-- Footer -->
-    <footer style="background: #1f2937; color: white; padding: 3rem 0; text-align: center; margin-top: 4rem;">
+    <footer style="background: linear-gradient(135deg, #1f2937, #111827); color: white; padding: 4rem 0 2rem; margin-top: 6rem;">
         <div class="container">
-            <p>&copy; 2024 Resonant Earth Network. Building a sustainable future together.</p>
+            <div class="grid grid-4" style="margin-bottom: 3rem;">
+                <div>
+                    <h4 style="color: white; margin-bottom: 1rem;">Resonant Earth</h4>
+                    <p style="color: #9ca3af; font-size: 0.95rem;">Building regenerative ecovillages powered by Web3 governance and sustainable living practices.</p>
+                </div>
+                <div>
+                    <h4 style="color: white; margin-bottom: 1rem;">Locations</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="index.html#palawan" style="color: #9ca3af; text-decoration: none;">Palawan, Philippines</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="business-model.html" style="color: #9ca3af; text-decoration: none;">Cox's Bazar, Bangladesh</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="business-model.html" style="color: #9ca3af; text-decoration: none;">Costa Rica</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="business-model.html" style="color: #9ca3af; text-decoration: none;">Portugal</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: white; margin-bottom: 1rem;">Resources</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="tokenomics.html" style="color: #9ca3af; text-decoration: none;">Tokenomics</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="water-quality.html" style="color: #9ca3af; text-decoration: none;">Water Quality</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="business-model.html" style="color: #9ca3af; text-decoration: none;">Business Model</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #9ca3af; text-decoration: none;">Whitepaper</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 style="color: white; margin-bottom: 1rem;">Connect</h4>
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #9ca3af; text-decoration: none;">Discord Community</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #9ca3af; text-decoration: none;">Twitter</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #9ca3af; text-decoration: none;">Telegram</a></li>
+                        <li style="margin-bottom: 0.5rem;"><a href="#" style="color: #9ca3af; text-decoration: none;">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div style="border-top: 1px solid #374151; padding-top: 2rem; text-align: center;">
+                <p style="color: #9ca3af; margin: 0;">&copy; 2024 Resonant Earth Network. Building a regenerative future together.</p>
+            </div>
         </div>
     </footer>
+
+    <script src="assets/navigation.js"></script>
 </body>
 </html>
