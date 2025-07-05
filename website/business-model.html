@@ -1,0 +1,667 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Model & Global Expansion - Resonant Earth Network</title>
+    <meta name="description" content="Comprehensive business model for sustainable ecovillage network expansion across strategic global locations including Cox's Bazar, Costa Rica, and more.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #d1fae5 100%);
+            color: #374151;
+            line-height: 1.7;
+        }
+        
+        /* Navigation */
+        nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            padding: 1rem 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: #1f2937;
+            display: flex;
+            align-items: center;
+        }
+        
+        /* Typography */
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #1f2937;
+            text-align: center;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, #10b981, #059669);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #1f2937;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid #10b981;
+            padding-bottom: 0.5rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 0.75rem;
+        }
+        
+        h4 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: #4b5563;
+            margin-bottom: 0.5rem;
+        }
+        
+        p {
+            color: #6b7280;
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        /* Cards and sections */
+        .hero {
+            padding: 8rem 0 4rem;
+            text-align: center;
+        }
+        
+        .section {
+            padding: 4rem 0;
+        }
+        
+        .card {
+            background: white;
+            border: 1px solid #e5e7eb;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Location cards */
+        .location-card {
+            background: linear-gradient(135deg, #f0fdf4, #ecfdf5);
+            border: 2px solid #10b981;
+            padding: 2rem;
+            border-radius: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .location-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2);
+        }
+        
+        /* Revenue model cards */
+        .revenue-card {
+            background: linear-gradient(135deg, #eff6ff, #dbeafe);
+            border: 2px solid #2563eb;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Highlight boxes */
+        .highlight-box {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            text-align: center;
+            margin: 2rem 0;
+        }
+        
+        /* Utility classes */
+        .grid { display: grid; gap: 2rem; }
+        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+        .grid-3 { grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); }
+        .text-center { text-align: center; }
+        .max-w-4xl { max-width: 56rem; }
+        .mx-auto { margin: 0 auto; }
+        .flex { display: flex; }
+        .justify-between { justify-content: space-between; }
+        .items-center { align-items: center; }
+        .space-x-6 > * + * { margin-left: 1.5rem; }
+        .h-10 { height: 2.5rem; }
+        .mr-3 { margin-right: 0.75rem; }
+        
+        /* Links */
+        a {
+            color: #2563eb;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+        
+        a:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+        
+        /* Lists */
+        ul {
+            list-style: disc;
+            padding-left: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        li {
+            margin-bottom: 0.5rem;
+            color: #4b5563;
+        }
+        
+        /* Tables */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1rem 0;
+            background: white;
+            border-radius: 0.5rem;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+        }
+        
+        th, td {
+            padding: 1rem;
+            text-align: left;
+            border-bottom: 1px solid #e5e7eb;
+        }
+        
+        th {
+            background: #f9fafb;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.5rem; }
+            .container { padding: 0 1rem; }
+            .hero { padding: 6rem 0 3rem; }
+            .grid-3 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="container">
+            <div class="flex justify-between items-center">
+                <a href="index.html" class="logo">
+                    <img src="assets/rn-logo.png" alt="Resonant Earth Network Logo" class="h-10 mr-3">
+                    Resonant Earth Network
+                </a>
+                <div class="flex space-x-6">
+                    <a href="index.html">Home</a>
+                    <a href="index.html#palawan">Palawan</a>
+                    <a href="water-quality.html">Water Quality</a>
+                    <a href="tokenomics.html">Tokenomics</a>
+                    <a href="index.html#community">Community</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h1>Business Model & Global Expansion</h1>
+            <p class="text-center max-w-4xl mx-auto" style="font-size: 1.25rem; color: #4b5563;">
+                A comprehensive strategy for building a sustainable, profitable network of regenerative ecovillages 
+                across strategic global locations, powered by Web3 governance and real-world utility.
+            </p>
+        </div>
+    </section>
+
+    <main class="container">
+        <!-- Business Model Overview -->
+        <section class="section">
+            <h2>🏗️ Core Business Model</h2>
+            
+            <div class="highlight-box">
+                <h3 style="color: white; margin-bottom: 1rem;">Hybrid Revenue Model</h3>
+                <p style="color: white; font-size: 1.2rem;">
+                    Combining traditional hospitality revenue with innovative Web3 tokenomics, 
+                    creating multiple income streams while building a sustainable community ecosystem.
+                </p>
+            </div>
+            
+            <div class="grid grid-2">
+                <div class="revenue-card">
+                    <h3>💰 Traditional Revenue Streams</h3>
+                    <ul>
+                        <li><strong>Accommodation Revenue:</strong> $150-400/night per room</li>
+                        <li><strong>Food & Beverage:</strong> $50-80/person/day</li>
+                        <li><strong>Wellness Services:</strong> $75-200/session</li>
+                        <li><strong>Retreat Programs:</strong> $1,500-5,000/person/week</li>
+                        <li><strong>Event Hosting:</strong> $10,000-50,000/event</li>
+                        <li><strong>Educational Workshops:</strong> $200-500/person/day</li>
+                    </ul>
+                </div>
+                
+                <div class="revenue-card">
+                    <h3>🪙 Web3 Revenue Streams</h3>
+                    <ul>
+                        <li><strong>$ECOSTAY Token Sales:</strong> Initial and ongoing distribution</li>
+                        <li><strong>Membership Staking:</strong> Premium tier subscriptions</li>
+                        <li><strong>DAO Treasury Fees:</strong> 2-5% of all transactions</li>
+                        <li><strong>NFT Experiences:</strong> Exclusive access tokens</li>
+                        <li><strong>Carbon Credit Trading:</strong> Verified offset sales</li>
+                        <li><strong>Data Monetization:</strong> Environmental monitoring insights</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Financial Projections -->
+        <section class="section">
+            <h2>📊 Financial Projections (Per Location)</h2>
+            
+            <table>
+                <thead>
+                    <tr>
+                        <th>Revenue Stream</th>
+                        <th>Year 1</th>
+                        <th>Year 3</th>
+                        <th>Year 5</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Accommodation (20 beds, 60% occupancy)</td>
+                        <td>$1.2M</td>
+                        <td>$1.8M</td>
+                        <td>$2.2M</td>
+                        <td>Premium pricing, high demand</td>
+                    </tr>
+                    <tr>
+                        <td>Food & Beverage</td>
+                        <td>$400K</td>
+                        <td>$600K</td>
+                        <td>$750K</td>
+                        <td>Farm-to-table, organic premium</td>
+                    </tr>
+                    <tr>
+                        <td>Wellness & Retreats</td>
+                        <td>$300K</td>
+                        <td>$500K</td>
+                        <td>$700K</td>
+                        <td>Growing wellness tourism</td>
+                    </tr>
+                    <tr>
+                        <td>Token Economy</td>
+                        <td>$200K</td>
+                        <td>$800K</td>
+                        <td>$1.5M</td>
+                        <td>Network effects, adoption</td>
+                    </tr>
+                    <tr>
+                        <td>Carbon Credits</td>
+                        <td>$50K</td>
+                        <td>$150K</td>
+                        <td>$300K</td>
+                        <td>Reforestation, renewable energy</td>
+                    </tr>
+                    <tr style="background: #f0fdf4; font-weight: 600;">
+                        <td>Total Revenue</td>
+                        <td>$2.15M</td>
+                        <td>$3.85M</td>
+                        <td>$5.45M</td>
+                        <td>Compound growth model</td>
+                    </tr>
+                </tbody>
+            </table>
+            
+            <div class="card">
+                <h3>💡 Key Success Factors</h3>
+                <ul>
+                    <li><strong>Premium Positioning:</strong> Target conscious travelers willing to pay for authentic experiences</li>
+                    <li><strong>Network Effects:</strong> Each location increases value of the entire network</li>
+                    <li><strong>Token Utility:</strong> Real-world backing creates stable demand for $ECOSTAY</li>
+                    <li><strong>Community Building:</strong> Repeat visitors and long-term residents provide stable revenue</li>
+                    <li><strong>Regenerative Impact:</strong> Environmental benefits attract ESG-focused investors</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Strategic Locations -->
+        <section class="section">
+            <h2>🌍 Strategic Global Locations</h2>
+            <p class="text-center max-w-4xl mx-auto" style="margin-bottom: 3rem;">
+                Carefully selected locations that combine natural beauty, strategic accessibility,
+                favorable regulations, and strong potential for regenerative impact.
+            </p>
+
+            <div class="grid grid-3">
+                <!-- Phase 1: Palawan, Philippines -->
+                <div class="location-card">
+                    <h3>🇵🇭 Phase 1: Palawan, Philippines</h3>
+                    <p style="color: #059669; font-weight: 600;">Flagship Location - 2026-2027</p>
+
+                    <h4>Strategic Advantages:</h4>
+                    <ul>
+                        <li>UNESCO Biosphere Reserve</li>
+                        <li>Growing eco-tourism market</li>
+                        <li>Crypto-friendly regulations</li>
+                        <li>English-speaking population</li>
+                        <li>Direct flights from major Asian cities</li>
+                        <li>Low cost of land and construction</li>
+                    </ul>
+
+                    <h4>Target Market:</h4>
+                    <ul>
+                        <li>Digital nomads from Singapore, Hong Kong</li>
+                        <li>Wellness tourists from Australia, Japan</li>
+                        <li>Crypto enthusiasts and Web3 builders</li>
+                        <li>Conscious travelers seeking authentic experiences</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 2: Cox's Bazar, Bangladesh -->
+                <div class="location-card">
+                    <h3>🇧🇩 Phase 2: Cox's Bazar, Bangladesh</h3>
+                    <p style="color: #059669; font-weight: 600;">Emerging Market Pioneer - 2028-2029</p>
+
+                    <h4>Strategic Advantages:</h4>
+                    <ul>
+                        <li>World's longest natural beach (120km)</li>
+                        <li>Rapidly developing tourism infrastructure</li>
+                        <li>Government support for eco-tourism</li>
+                        <li>Low operational costs</li>
+                        <li>Proximity to India and Southeast Asia</li>
+                        <li>Untapped market with huge potential</li>
+                    </ul>
+
+                    <h4>Unique Opportunities:</h4>
+                    <ul>
+                        <li>Pioneer advantage in emerging market</li>
+                        <li>Partnership with local communities</li>
+                        <li>Mangrove restoration projects</li>
+                        <li>Cultural exchange programs</li>
+                        <li>Sustainable fishing initiatives</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 3: Costa Rica -->
+                <div class="location-card">
+                    <h3>🇨🇷 Phase 3: Guanacaste, Costa Rica</h3>
+                    <p style="color: #059669; font-weight: 600;">Americas Hub - 2029-2030</p>
+
+                    <h4>Strategic Advantages:</h4>
+                    <ul>
+                        <li>Established eco-tourism destination</li>
+                        <li>Political stability and safety</li>
+                        <li>No military, peaceful culture</li>
+                        <li>Renewable energy leadership (99%)</li>
+                        <li>Easy access from North America</li>
+                        <li>Strong environmental regulations</li>
+                    </ul>
+
+                    <h4>Target Market:</h4>
+                    <ul>
+                        <li>North American wellness tourists</li>
+                        <li>Retirement and relocation market</li>
+                        <li>Corporate retreat market</li>
+                        <li>Regenerative agriculture enthusiasts</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 4: Portugal -->
+                <div class="location-card">
+                    <h3>🇵🇹 Phase 4: Algarve, Portugal</h3>
+                    <p style="color: #059669; font-weight: 600;">European Gateway - 2030-2031</p>
+
+                    <h4>Strategic Advantages:</h4>
+                    <ul>
+                        <li>EU market access</li>
+                        <li>Golden Visa program</li>
+                        <li>Crypto-friendly tax policies</li>
+                        <li>Year-round mild climate</li>
+                        <li>Strong digital nomad community</li>
+                        <li>Excellent infrastructure</li>
+                    </ul>
+
+                    <h4>Market Focus:</h4>
+                    <ul>
+                        <li>European digital nomads</li>
+                        <li>Crypto investors and entrepreneurs</li>
+                        <li>Luxury wellness market</li>
+                        <li>Sustainable living advocates</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 5: New Zealand -->
+                <div class="location-card">
+                    <h3>🇳🇿 Phase 5: Bay of Islands, New Zealand</h3>
+                    <p style="color: #059669; font-weight: 600;">Pacific Sanctuary - 2031-2032</p>
+
+                    <h4>Strategic Advantages:</h4>
+                    <ul>
+                        <li>Political stability and rule of law</li>
+                        <li>Clean environment and biodiversity</li>
+                        <li>Adventure tourism market</li>
+                        <li>English-speaking, educated population</li>
+                        <li>Strong Maori cultural heritage</li>
+                        <li>Climate change resilience</li>
+                    </ul>
+
+                    <h4>Unique Value:</h4>
+                    <ul>
+                        <li>Premium "doomsday" retreat market</li>
+                        <li>Indigenous partnership opportunities</li>
+                        <li>Marine conservation projects</li>
+                        <li>High-net-worth individual focus</li>
+                    </ul>
+                </div>
+
+                <!-- Phase 6: Morocco -->
+                <div class="location-card">
+                    <h3>🇲🇦 Phase 6: Essaouira, Morocco</h3>
+                    <p style="color: #059669; font-weight: 600;">African Gateway - 2032-2033</p>
+
+                    <h4>Strategic Advantages:</h4>
+                    <ul>
+                        <li>Gateway to African markets</li>
+                        <li>Rich cultural heritage</li>
+                        <li>Growing tech and startup scene</li>
+                        <li>Excellent wind and solar resources</li>
+                        <li>Proximity to Europe</li>
+                        <li>Government modernization initiatives</li>
+                    </ul>
+
+                    <h4>Focus Areas:</h4>
+                    <ul>
+                        <li>Cultural immersion experiences</li>
+                        <li>Renewable energy showcase</li>
+                        <li>African entrepreneur network</li>
+                        <li>Desert regeneration projects</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expansion Strategy -->
+        <section class="section">
+            <h2>🚀 Network Expansion Strategy</h2>
+
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>📈 Phased Growth Model</h3>
+                    <ul>
+                        <li><strong>Phase 1 (2026-2027):</strong> Prove concept with Palawan flagship</li>
+                        <li><strong>Phase 2 (2028-2029):</strong> Expand to emerging markets (Cox's Bazar)</li>
+                        <li><strong>Phase 3 (2029-2030):</strong> Enter established markets (Costa Rica)</li>
+                        <li><strong>Phase 4 (2030-2031):</strong> European expansion (Portugal)</li>
+                        <li><strong>Phase 5 (2031-2032):</strong> Premium markets (New Zealand)</li>
+                        <li><strong>Phase 6 (2032-2033):</strong> Cultural diversity (Morocco)</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>💼 Partnership Strategy</h3>
+                    <ul>
+                        <li><strong>Local Partnerships:</strong> Indigenous communities, local governments</li>
+                        <li><strong>Investment Partners:</strong> Impact investors, family offices</li>
+                        <li><strong>Technology Partners:</strong> Web3 infrastructure, IoT monitoring</li>
+                        <li><strong>Academic Partners:</strong> Research institutions, universities</li>
+                        <li><strong>NGO Partnerships:</strong> Conservation organizations</li>
+                        <li><strong>Corporate Partners:</strong> Sustainable brands, B-Corps</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="highlight-box">
+                <h3 style="color: white; margin-bottom: 1rem;">Network Effects Strategy</h3>
+                <p style="color: white; font-size: 1.1rem;">
+                    Each new location increases the value of the entire network. $ECOSTAY tokens work across all locations,
+                    creating a global passport for conscious travelers. Members can move freely between locations,
+                    building a truly global community of regenerative living advocates.
+                </p>
+            </div>
+        </section>
+
+        <!-- Investment Requirements -->
+        <section class="section">
+            <h2>💰 Investment Requirements & Returns</h2>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Location</th>
+                        <th>Initial Investment</th>
+                        <th>Timeline</th>
+                        <th>Break-even</th>
+                        <th>5-Year ROI</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Palawan, Philippines</td>
+                        <td>$3.5M</td>
+                        <td>18 months</td>
+                        <td>Year 2</td>
+                        <td>180%</td>
+                    </tr>
+                    <tr>
+                        <td>Cox's Bazar, Bangladesh</td>
+                        <td>$2.8M</td>
+                        <td>15 months</td>
+                        <td>Year 2.5</td>
+                        <td>220%</td>
+                    </tr>
+                    <tr>
+                        <td>Guanacaste, Costa Rica</td>
+                        <td>$4.2M</td>
+                        <td>20 months</td>
+                        <td>Year 2</td>
+                        <td>160%</td>
+                    </tr>
+                    <tr>
+                        <td>Algarve, Portugal</td>
+                        <td>$5.5M</td>
+                        <td>24 months</td>
+                        <td>Year 2.5</td>
+                        <td>140%</td>
+                    </tr>
+                    <tr>
+                        <td>Bay of Islands, NZ</td>
+                        <td>$6.8M</td>
+                        <td>30 months</td>
+                        <td>Year 3</td>
+                        <td>120%</td>
+                    </tr>
+                    <tr>
+                        <td>Essaouira, Morocco</td>
+                        <td>$3.8M</td>
+                        <td>18 months</td>
+                        <td>Year 2.5</td>
+                        <td>170%</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Risk Mitigation -->
+        <section class="section">
+            <h2>⚠️ Risk Mitigation Strategy</h2>
+
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>🛡️ Operational Risks</h3>
+                    <ul>
+                        <li><strong>Political Risk:</strong> Diversified geographic portfolio</li>
+                        <li><strong>Climate Risk:</strong> Climate-resilient design and locations</li>
+                        <li><strong>Regulatory Risk:</strong> Legal compliance and government relations</li>
+                        <li><strong>Market Risk:</strong> Multiple revenue streams and target markets</li>
+                        <li><strong>Technology Risk:</strong> Proven technologies and backup systems</li>
+                    </ul>
+                </div>
+
+                <div class="card">
+                    <h3>💎 Competitive Advantages</h3>
+                    <ul>
+                        <li><strong>First-Mover:</strong> Web3-native hospitality model</li>
+                        <li><strong>Network Effects:</strong> Global token utility</li>
+                        <li><strong>Community:</strong> Strong brand loyalty and advocacy</li>
+                        <li><strong>Technology:</strong> Proprietary monitoring and governance systems</li>
+                        <li><strong>Impact:</strong> Measurable environmental and social benefits</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="section">
+            <div class="highlight-box">
+                <h2 style="color: white; margin-bottom: 1rem;">🌱 Join the Global Movement</h2>
+                <p style="color: white; font-size: 1.2rem; margin-bottom: 2rem;">
+                    Be part of building the world's first Web3-powered network of regenerative ecovillages.
+                    Together, we're creating a new model for sustainable living and conscious travel.
+                </p>
+                <a href="index.html#join" style="background: white; color: #10b981; padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; display: inline-block;">
+                    Join the Waitlist
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer style="background: #1f2937; color: white; padding: 3rem 0; text-align: center; margin-top: 4rem;">
+        <div class="container">
+            <p>&copy; 2024 Resonant Earth Network. Building a regenerative future, one ecovillage at a time.</p>
+        </div>
+    </footer>
+</body>
+</html>
