@@ -444,9 +444,31 @@
                 <p style="color: white; font-size: 1.2rem; margin-bottom: 2rem;">
                     Start by joining our waitlist to get early access to tokens and be part of building the future of sustainable living.
                 </p>
-                <a href="index.html#join" style="background: white; color: #10b981; padding: 1rem 2rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; display: inline-block;">
-                    Join the Waitlist
-                </a>
+
+                <div style="max-width: 400px; margin: 0 auto;">
+                    <form class="email-signup-form" data-source="tokenomics" style="background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 1rem; backdrop-filter: blur(10px);">
+                        <div class="email-input-group">
+                            <input
+                                type="email"
+                                name="email"
+                                class="email-input"
+                                placeholder="Enter your email for early access"
+                                required
+                                autocomplete="email"
+                                style="background: rgba(255,255,255,0.9);"
+                            >
+                        </div>
+                        <button type="submit" class="email-submit-btn" data-original-text="Get Early Access">
+                            Get Early Access
+                            <span class="loading-spinner"></span>
+                        </button>
+                        <input type="hidden" name="source" value="tokenomics">
+                    </form>
+
+                    <div class="privacy-notice" style="color: rgba(255,255,255,0.8); margin-top: 1rem;">
+                        We'll notify you when $ECOSTAY tokens become available
+                    </div>
+                </div>
             </div>
         </section>
     </main>
@@ -495,5 +517,6 @@
     </footer>
 
     <script src="assets/navigation.js"></script>
+    <script src="assets/email-signup.js"></script>
 </body>
 </html>
