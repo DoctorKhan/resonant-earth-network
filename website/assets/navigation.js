@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Navigation HTML template
+// Navigation HTML template - CONSISTENT ACROSS ALL PAGES
 function createNavigation(currentPage = '') {
     return `
         <nav class="navbar">
@@ -108,33 +108,33 @@ function createNavigation(currentPage = '') {
                     <img src="assets/rn-logo.png" alt="Resonant Earth Network Logo">
                     Resonant Earth Network
                 </a>
-                
+
                 <div class="nav-links">
                     <a href="index.html#vision" class="nav-link">Vision</a>
                     <a href="index.html#features" class="nav-link">Features</a>
                     <a href="index.html#palawan" class="nav-link">Palawan</a>
+                    <a href="overview.html" class="nav-link">Overview</a>
                     <a href="business-model.html" class="nav-link">Business</a>
                     <a href="water-quality.html" class="nav-link">Water Quality</a>
                     <a href="tokenomics.html" class="nav-link">Tokenomics</a>
-                    <a href="index.html#community" class="nav-link">Community</a>
                     <a href="index.html#join" class="nav-link cta-button">Join Waitlist</a>
                 </div>
-                
+
                 <div class="mobile-menu-button">
                     <span></span>
                     <span></span>
                     <span></span>
                 </div>
             </div>
-            
+
             <div class="mobile-nav">
                 <a href="index.html#vision" class="mobile-nav-link">Vision</a>
                 <a href="index.html#features" class="mobile-nav-link">Features</a>
                 <a href="index.html#palawan" class="mobile-nav-link">Palawan</a>
+                <a href="overview.html" class="mobile-nav-link">Overview</a>
                 <a href="business-model.html" class="mobile-nav-link">Business Model</a>
                 <a href="water-quality.html" class="mobile-nav-link">Water Quality</a>
                 <a href="tokenomics.html" class="mobile-nav-link">Tokenomics</a>
-                <a href="index.html#community" class="mobile-nav-link">Community</a>
                 <a href="index.html#join" class="mobile-nav-link cta-button" style="margin: 1rem 2rem; text-align: center; border-radius: 2rem;">Join Waitlist</a>
             </div>
         </nav>
@@ -187,3 +187,38 @@ function createFooter() {
         </footer>
     `;
 }
+
+// Set active navigation state based on current page
+function setActiveNavigation() {
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
+
+    // Remove all active classes first
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+    });
+
+    // Set active based on current page
+    navLinks.forEach(link => {
+        const href = link.getAttribute('href');
+
+        if (href) {
+            const linkPage = href.split('/').pop().split('#')[0] || 'index.html';
+
+            // Handle specific page matches
+            if (currentPage === 'tokenomics.html' && linkPage === 'tokenomics.html') {
+                link.classList.add('active');
+            } else if (currentPage === 'business-model.html' && linkPage === 'business-model.html') {
+                link.classList.add('active');
+            } else if (currentPage === 'water-quality.html' && linkPage === 'water-quality.html') {
+                link.classList.add('active');
+            } else if (currentPage === 'overview.html' && linkPage === 'overview.html') {
+                link.classList.add('active');
+            }
+            // Note: index.html doesn't set any nav link as active since it uses anchor links
+        }
+    });
+}
+
+// Call setActiveNavigation when DOM is loaded
+document.addEventListener('DOMContentLoaded', setActiveNavigation);

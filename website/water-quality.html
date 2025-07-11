@@ -8,200 +8,45 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles.css">
-    <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 50%, #d1fae5 100%);
-            color: #374151;
-            line-height: 1.7;
-        }
-        
-        /* Navigation */
-        nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            z-index: 50;
-            padding: 1rem 0;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        
-        .logo {
-            font-weight: 700;
-            font-size: 1.25rem;
-            color: #1f2937;
-            display: flex;
-            align-items: center;
-        }
-        
-        /* Typography */
-        h1 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #1f2937;
-            text-align: center;
-            margin-bottom: 1.5rem;
-            background: linear-gradient(135deg, #dc2626, #b91c1c);
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        
-        h2 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: #1f2937;
-            margin-bottom: 1rem;
-            border-bottom: 3px solid #dc2626;
-            padding-bottom: 0.5rem;
-        }
-        
-        h3 {
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: #374151;
-            margin-bottom: 0.75rem;
-        }
-        
-        h4 {
-            font-size: 1.25rem;
-            font-weight: 600;
-            color: #4b5563;
-            margin-bottom: 0.5rem;
-        }
-        
-        p {
-            color: #6b7280;
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-        }
-        
-        /* Cards and sections */
-        .hero {
-            padding: 8rem 0 4rem;
-            text-align: center;
-        }
-        
-        .section {
-            padding: 4rem 0;
-        }
-        
-        .card {
-            background: white;
-            border: 1px solid #e5e7eb;
-            padding: 2rem;
-            border-radius: 1rem;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-        }
-        
-        /* Warning cards */
-        .warning-card {
-            background: linear-gradient(135deg, #fef2f2, #fee2e2);
-            border: 2px solid #dc2626;
-            padding: 2rem;
-            border-radius: 1rem;
-            margin-bottom: 1.5rem;
-        }
-        
-        /* Research cards */
-        .research-card {
-            background: linear-gradient(135deg, #eff6ff, #dbeafe);
-            border: 2px solid #2563eb;
-            padding: 1.5rem;
-            border-radius: 1rem;
-            margin-bottom: 1rem;
-        }
-        
-        /* Citation styling */
-        .citation {
-            font-size: 0.9rem;
-            color: #6b7280;
-            font-style: italic;
-            margin-top: 0.5rem;
-            padding: 0.5rem;
-            background: #f9fafb;
-            border-left: 4px solid #2563eb;
-            border-radius: 0 0.5rem 0.5rem 0;
-        }
-        
-        /* Utility classes */
-        .grid { display: grid; gap: 2rem; }
-        .grid-2 { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
-        .text-center { text-align: center; }
-        .max-w-4xl { max-width: 56rem; }
-        .mx-auto { margin: 0 auto; }
-        .flex { display: flex; }
-        .justify-between { justify-content: space-between; }
-        .items-center { align-items: center; }
-        .space-x-6 > * + * { margin-left: 1.5rem; }
-        .h-10 { height: 2.5rem; }
-        .mr-3 { margin-right: 0.75rem; }
-        
-        /* Links */
-        a {
-            color: #2563eb;
-            text-decoration: none;
-            transition: color 0.2s;
-        }
-        
-        a:hover {
-            color: #1d4ed8;
-            text-decoration: underline;
-        }
-        
-        /* Lists */
-        ul {
-            list-style: disc;
-            padding-left: 1.5rem;
-            margin-bottom: 1rem;
-        }
-        
-        li {
-            margin-bottom: 0.5rem;
-            color: #4b5563;
-        }
-        
-        /* Responsive */
-        @media (max-width: 768px) {
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.5rem; }
-            .container { padding: 0 1rem; }
-            .hero { padding: 6rem 0 3rem; }
-        }
-    </style>
+
+
 </head>
 <body>
     <!-- Navigation -->
-    <nav>
-        <div class="container">
-            <div class="flex justify-between items-center">
-                <a href="index.html" class="logo">
-                    <img src="assets/rn-logo.png" alt="Resonant Earth Network Logo" class="h-10 mr-3">
-                    Resonant Earth Network
-                </a>
-                <div class="flex space-x-6">
-                    <a href="index.html">Home</a>
-                    <a href="index.html#palawan">Palawan</a>
-                    <a href="tokenomics.html">Tokenomics</a>
-                    <a href="index.html#community">Community</a>
-                </div>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <img src="assets/rn-logo.png" alt="Resonant Earth Network Logo">
+                Resonant Earth Network
+            </a>
+
+            <div class="nav-links">
+                <a href="index.html#vision" class="nav-link">Vision</a>
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="index.html#palawan" class="nav-link">Palawan</a>
+                <a href="overview.html" class="nav-link">Overview</a>
+                <a href="business-model.html" class="nav-link">Business</a>
+                <a href="water-quality.html" class="nav-link active">Water Quality</a>
+                <a href="tokenomics.html" class="nav-link">Tokenomics</a>
+                <a href="index.html#join" class="nav-link cta-button">Join Waitlist</a>
             </div>
+
+            <div class="mobile-menu-button">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+
+        <div class="mobile-nav">
+            <a href="index.html#vision" class="mobile-nav-link">Vision</a>
+            <a href="index.html#features" class="mobile-nav-link">Features</a>
+            <a href="index.html#palawan" class="mobile-nav-link">Palawan</a>
+            <a href="overview.html" class="mobile-nav-link">Overview</a>
+            <a href="business-model.html" class="mobile-nav-link">Business Model</a>
+            <a href="water-quality.html" class="mobile-nav-link active">Water Quality</a>
+            <a href="tokenomics.html" class="mobile-nav-link">Tokenomics</a>
+            <a href="index.html#join" class="mobile-nav-link cta-button" style="margin: 1rem 2rem; text-align: center; border-radius: 2rem;">Join Waitlist</a>
         </div>
     </nav>
 
@@ -579,5 +424,7 @@
             </p>
         </div>
     </footer>
+
+    <script src="assets/navigation.js"></script>
 </body>
 </html>
