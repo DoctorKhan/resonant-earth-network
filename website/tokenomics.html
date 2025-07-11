@@ -3,8 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How Our Tokens Work - Resonant Earth Network</title>
+    <title>$ECOSTAY Token - Sustainable Living Currency | Resonant Earth Network</title>
+    <meta name="description" content="Discover $ECOSTAY: the world's first accommodation-backed token. 1 token = 1 night's stay across our global ecovillage network. Join the regenerative living revolution.">
+    <meta property="og:title" content="$ECOSTAY Token - Your Key to Global Sustainable Living">
+    <meta property="og:description" content="The world's first token backed by real accommodations. Access 6 ecovillages across 4 continents with $ECOSTAY tokens.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://resonantearth.network/assets/ecostay-token-preview.jpg">
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles.css">
     <style>
@@ -247,6 +253,50 @@
     </section>
 
     <main class="container">
+        <!-- Mission & Vision -->
+        <section class="section">
+            <div class="card" style="background: linear-gradient(135deg, #f0fdf4, #ecfdf5); border: 2px solid #10b981; text-align: center; padding: 3rem;">
+                <h2 style="color: #15803d; margin-bottom: 2rem;">🌱 Why We Created $ECOSTAY</h2>
+                <div style="max-width: 800px; margin: 0 auto;">
+                    <p style="font-size: 1.2rem; color: #166534; margin-bottom: 2rem; font-weight: 500;">
+                        "In a world where clean water is becoming scarce, political systems are failing, and communities are fragmenting,
+                        we're building something different: a network of regenerative sanctuaries where humans and nature thrive together."
+                    </p>
+
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin: 2rem 0;">
+                        <div>
+                            <div style="font-size: 3rem; margin-bottom: 0.5rem;">🏠</div>
+                            <h4 style="color: #15803d;">Real Homes</h4>
+                            <p style="color: #166534; font-size: 0.95rem;">Not just digital promises - actual places you can live, work, and belong</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 3rem; margin-bottom: 0.5rem;">💧</div>
+                            <h4 style="color: #15803d;">Pure Water</h4>
+                            <p style="color: #166534; font-size: 0.95rem;">Zero microplastics, PFAS-free water that actually nourishes your body</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 3rem; margin-bottom: 0.5rem;">🌍</div>
+                            <h4 style="color: #15803d;">Global Freedom</h4>
+                            <p style="color: #166534; font-size: 0.95rem;">Move freely between countries and cultures while staying connected to community</p>
+                        </div>
+                        <div>
+                            <div style="font-size: 3rem; margin-bottom: 0.5rem;">🤝</div>
+                            <h4 style="color: #15803d;">True Community</h4>
+                            <p style="color: #166534; font-size: 0.95rem;">Governed by residents, not corporations or distant bureaucrats</p>
+                        </div>
+                    </div>
+
+                    <div style="background: rgba(21, 128, 61, 0.1); padding: 2rem; border-radius: 1rem; margin-top: 2rem;">
+                        <p style="color: #15803d; font-size: 1.1rem; margin: 0;">
+                            <strong>$ECOSTAY isn't just a token - it's your membership to a new way of living.</strong>
+                            Every token represents real value: a night's stay in a regenerative community where you can
+                            breathe clean air, drink pure water, and connect with people building a better world.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <!-- Our Token -->
         <section class="section">
             <h2 class="text-center">Meet $ECOSTAY</h2>
@@ -260,19 +310,121 @@
                 <p style="color: #059669; font-weight: 600;">One token for everything you need</p>
 
                 <h4>What can you do with $ECOSTAY?</h4>
-                <ul>
-                    <li>🏠 <strong>Stay Overnight:</strong> 1 $ECOSTAY = 1 night in a standard room</li>
-                    <li>🍽️ Buy meals from our community kitchen</li>
-                    <li>🧘 Book wellness services and classes</li>
-                    <li>🛒 Purchase goods from our eco-shop</li>
-                    <li>💧 Access clean, filtered water</li>
-                    <li>🗳️ Vote on community decisions (when you stake tokens)</li>
-                    <li>💰 Earn rewards by becoming a member</li>
-                    <li>🎯 Get discounts and special perks</li>
-                </ul>
+
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1rem; margin: 1.5rem 0;">
+                    <div style="display: flex; align-items: center; padding: 1rem; background: #f0fdf4; border-radius: 0.75rem; border-left: 4px solid #10b981;">
+                        <div style="font-size: 2rem; margin-right: 1rem;">🏠</div>
+                        <div>
+                            <strong style="color: #15803d;">Stay Overnight</strong><br>
+                            <span style="color: #166534; font-size: 0.9rem;">1 $ECOSTAY = 1 night in a standard room</span>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; padding: 1rem; background: #eff6ff; border-radius: 0.75rem; border-left: 4px solid #3b82f6;">
+                        <div style="font-size: 2rem; margin-right: 1rem;">🍽️</div>
+                        <div>
+                            <strong style="color: #1d4ed8;">Community Dining</strong><br>
+                            <span style="color: #1e40af; font-size: 0.9rem;">Fresh, organic meals from our gardens</span>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; padding: 1rem; background: #fef3c7; border-radius: 0.75rem; border-left: 4px solid #f59e0b;">
+                        <div style="font-size: 2rem; margin-right: 1rem;">🧘</div>
+                        <div>
+                            <strong style="color: #d97706;">Wellness Services</strong><br>
+                            <span style="color: #92400e; font-size: 0.9rem;">Yoga, meditation, healing sessions</span>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; padding: 1rem; background: #fce7f3; border-radius: 0.75rem; border-left: 4px solid #ec4899;">
+                        <div style="font-size: 2rem; margin-right: 1rem;">🛒</div>
+                        <div>
+                            <strong style="color: #be185d;">Eco Shop</strong><br>
+                            <span style="color: #9d174d; font-size: 0.9rem;">Sustainable goods and local crafts</span>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; padding: 1rem; background: #ecfdf5; border-radius: 0.75rem; border-left: 4px solid #059669;">
+                        <div style="font-size: 2rem; margin-right: 1rem;">💧</div>
+                        <div>
+                            <strong style="color: #047857;">Pure Water</strong><br>
+                            <span style="color: #065f46; font-size: 0.9rem;">Zero microplastics, PFAS-free</span>
+                        </div>
+                    </div>
+
+                    <div style="display: flex; align-items: center; padding: 1rem; background: #f3e8ff; border-radius: 0.75rem; border-left: 4px solid #8b5cf6;">
+                        <div style="font-size: 2rem; margin-right: 1rem;">🗳️</div>
+                        <div>
+                            <strong style="color: #7c3aed;">DAO Governance</strong><br>
+                            <span style="color: #6d28d9; font-size: 0.9rem;">Vote on community decisions</span>
+                        </div>
+                    </div>
+                </div>
 
                 <div class="highlight-box" style="margin-top: 1.5rem;">
                     <strong>$ECOSTAY is backed by real accommodations and services you can actually use!</strong>
+                </div>
+            </div>
+        </section>
+
+        <!-- Token Supply & Allocation -->
+        <section class="section">
+            <h2 class="text-center">📊 Token Supply & Distribution</h2>
+
+            <div class="grid grid-2">
+                <div class="card">
+                    <h3>💰 Total Supply: 100,000,000 $ECOSTAY</h3>
+                    <p>Fixed supply with no inflation - your tokens maintain their purchasing power as the network grows.</p>
+
+                    <div style="margin: 2rem 0;">
+                        <canvas id="tokenChart" width="300" height="300"></canvas>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>🎯 Allocation Breakdown</h3>
+                    <div style="margin: 1.5rem 0;">
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem; padding: 1rem; background: #f0fdf4; border-radius: 0.5rem;">
+                            <div style="width: 20px; height: 20px; background: #10b981; border-radius: 50%; margin-right: 1rem;"></div>
+                            <div>
+                                <strong>40% - Community & Ecosystem</strong><br>
+                                <span style="color: #6b7280; font-size: 0.9rem;">Staking rewards, airdrops, community grants over 5 years</span>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem; padding: 1rem; background: #eff6ff; border-radius: 0.5rem;">
+                            <div style="width: 20px; height: 20px; background: #3b82f6; border-radius: 50%; margin-right: 1rem;"></div>
+                            <div>
+                                <strong>25% - Ecovillage Treasury</strong><br>
+                                <span style="color: #6b7280; font-size: 0.9rem;">Operations, development, partnerships (DAO controlled)</span>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem; padding: 1rem; background: #fef3c7; border-radius: 0.5rem;">
+                            <div style="width: 20px; height: 20px; background: #f59e0b; border-radius: 50%; margin-right: 1rem;"></div>
+                            <div>
+                                <strong>20% - Public & Early Supporters</strong><br>
+                                <span style="color: #6b7280; font-size: 0.9rem;">Token sales and early community members</span>
+                            </div>
+                        </div>
+
+                        <div style="display: flex; align-items: center; margin-bottom: 1rem; padding: 1rem; background: #fce7f3; border-radius: 0.5rem;">
+                            <div style="width: 20px; height: 20px; background: #ec4899; border-radius: 50%; margin-right: 1rem;"></div>
+                            <div>
+                                <strong>15% - Team & Advisors</strong><br>
+                                <span style="color: #6b7280; font-size: 0.9rem;">4-year vesting, 1-year cliff</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="background: #f9fafb; padding: 1.5rem; border-radius: 0.5rem; margin-top: 1rem;">
+                        <h4 style="color: #374151; margin-bottom: 0.5rem;">🔒 Vesting Schedule</h4>
+                        <ul style="color: #6b7280; font-size: 0.9rem; margin: 0; padding-left: 1rem;">
+                            <li>Team tokens: 25% after 1 year, then monthly over 3 years</li>
+                            <li>Community tokens: Released based on network milestones</li>
+                            <li>Treasury: Governed by DAO voting</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
@@ -437,6 +589,121 @@
 
         </section>
 
+        <!-- Social Proof & Testimonials -->
+        <section class="section">
+            <h2 class="text-center">🗣️ What People Are Saying</h2>
+
+            <div class="grid grid-2">
+                <div class="card" style="background: linear-gradient(135deg, #f0fdf4, #ecfdf5); border-color: #10b981;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=60&h=60&fit=crop&crop=face"
+                             style="width: 60px; height: 60px; border-radius: 50%; margin-right: 1rem;"
+                             alt="Community Member">
+                        <div>
+                            <strong style="color: #15803d;">Alex Chen</strong><br>
+                            <span style="color: #6b7280; font-size: 0.9rem;">Digital Nomad & Early Supporter</span>
+                        </div>
+                    </div>
+                    <p style="color: #166534; font-style: italic;">
+                        "Finally, a token that makes sense! I've been traveling for 3 years looking for communities like this.
+                        The fact that I can use $ECOSTAY across multiple locations is exactly what the nomad community needs."
+                    </p>
+                </div>
+
+                <div class="card" style="background: linear-gradient(135deg, #eff6ff, #dbeafe); border-color: #3b82f6;">
+                    <div style="display: flex; align-items: center; margin-bottom: 1rem;">
+                        <img src="https://images.unsplash.com/photo-1494790108755-2616b612b786?w=60&h=60&fit=crop&crop=face"
+                             style="width: 60px; height: 60px; border-radius: 50%; margin-right: 1rem;"
+                             alt="Community Member">
+                        <div>
+                            <strong style="color: #1d4ed8;">Dr. Sarah Martinez</strong><br>
+                            <span style="color: #6b7280; font-size: 0.9rem;">Environmental Scientist</span>
+                        </div>
+                    </div>
+                    <p style="color: #1e40af; font-style: italic;">
+                        "The water quality standards are impressive. As someone who studies microplastics,
+                        I'm excited to see a community taking this seriously. The blockchain transparency is a game-changer."
+                    </p>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem;">
+                <div style="display: inline-flex; align-items: center; background: white; padding: 1rem 2rem; border-radius: 1rem; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                    <div style="margin-right: 2rem;">
+                        <div style="font-size: 2rem; font-weight: 800; color: #10b981;">1,250+</div>
+                        <div style="color: #6b7280; font-size: 0.9rem;">Waitlist Members</div>
+                    </div>
+                    <div style="margin-right: 2rem;">
+                        <div style="font-size: 2rem; font-weight: 800; color: #3b82f6;">140+</div>
+                        <div style="color: #6b7280; font-size: 0.9rem;">Active Contributors</div>
+                    </div>
+                    <div>
+                        <div style="font-size: 2rem; font-weight: 800; color: #f59e0b;">6</div>
+                        <div style="color: #6b7280; font-size: 0.9rem;">Planned Locations</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- What Happens Next -->
+        <section class="section">
+            <h2 class="text-center">🚀 What Happens After You Join?</h2>
+
+            <div class="card">
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div style="text-align: center; padding: 1.5rem;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-weight: bold; font-size: 1.5rem;">1</div>
+                        <h4>Instant Confirmation</h4>
+                        <p style="color: #6b7280; font-size: 0.95rem;">Welcome email with project updates, Discord invite, and exclusive content access</p>
+                    </div>
+
+                    <div style="text-align: center; padding: 1.5rem;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #3b82f6, #1d4ed8); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-weight: bold; font-size: 1.5rem;">2</div>
+                        <h4>Weekly Updates</h4>
+                        <p style="color: #6b7280; font-size: 0.95rem;">Construction progress, water quality reports, and community highlights from Palawan</p>
+                    </div>
+
+                    <div style="text-align: center; padding: 1.5rem;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #f59e0b, #d97706); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-weight: bold; font-size: 1.5rem;">3</div>
+                        <h4>Early Access</h4>
+                        <p style="color: #6b7280; font-size: 0.95rem;">First opportunity to purchase $ECOSTAY tokens before public launch (Q2 2026)</p>
+                    </div>
+
+                    <div style="text-align: center; padding: 1.5rem;">
+                        <div style="width: 60px; height: 60px; background: linear-gradient(135deg, #ec4899, #be185d); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; color: white; font-weight: bold; font-size: 1.5rem;">4</div>
+                        <h4>Community Access</h4>
+                        <p style="color: #6b7280; font-size: 0.95rem;">Join governance discussions, vote on proposals, and help shape the future of the network</p>
+                    </div>
+                </div>
+
+                <div style="background: #f0fdf4; padding: 2rem; border-radius: 1rem; margin-top: 2rem; text-align: center;">
+                    <h4 style="color: #15803d; margin-bottom: 1rem;">📅 Expected Timeline</h4>
+                    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; color: #166534;">
+                        <div><strong>Q1 2026:</strong> Palawan construction begins</div>
+                        <div><strong>Q2 2026:</strong> Token launch & early access</div>
+                        <div><strong>Q3 2026:</strong> First residents move in</div>
+                        <div><strong>Q4 2026:</strong> Full operations & amenities</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Legal Disclaimer -->
+        <section class="section">
+            <div class="card" style="background: #fef2f2; border-color: #fca5a5;">
+                <h3 style="color: #dc2626;">⚠️ Important Disclaimers</h3>
+                <div style="color: #7f1d1d; font-size: 0.95rem;">
+                    <p><strong>Not Investment Advice:</strong> This information is for educational purposes only. $ECOSTAY tokens are utility tokens for accessing ecovillage services, not investment securities.</p>
+
+                    <p><strong>Regulatory Compliance:</strong> Token availability may vary by jurisdiction. We comply with applicable laws and may restrict access in certain regions.</p>
+
+                    <p><strong>Project Risks:</strong> Like any early-stage project, there are risks including construction delays, regulatory changes, and market conditions. Only participate with funds you can afford to lose.</p>
+
+                    <p><strong>Utility Focus:</strong> $ECOSTAY tokens are designed for use within our ecovillage network. While they may have secondary market value, their primary purpose is accessing accommodations and services.</p>
+                </div>
+            </div>
+        </section>
+
         <!-- Call to Action -->
         <section class="section">
             <div class="highlight-box" style="background: linear-gradient(135deg, #10b981, #059669);">
@@ -518,5 +785,48 @@
 
     <script src="assets/navigation.js"></script>
     <script src="assets/email-signup.js"></script>
+
+    <script>
+        // Create tokenomics pie chart
+        document.addEventListener('DOMContentLoaded', function() {
+            const ctx = document.getElementById('tokenChart');
+            if (ctx) {
+                new Chart(ctx, {
+                    type: 'doughnut',
+                    data: {
+                        labels: ['Community & Ecosystem', 'Ecovillage Treasury', 'Public & Early Supporters', 'Team & Advisors'],
+                        datasets: [{
+                            data: [40, 25, 20, 15],
+                            backgroundColor: [
+                                '#10b981',
+                                '#3b82f6',
+                                '#f59e0b',
+                                '#ec4899'
+                            ],
+                            borderWidth: 0,
+                            hoverOffset: 10
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: true,
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    label: function(context) {
+                                        return context.label + ': ' + context.parsed + '%';
+                                    }
+                                }
+                            }
+                        },
+                        cutout: '60%'
+                    }
+                });
+            }
+        });
+    </script>
 </body>
 </html>
