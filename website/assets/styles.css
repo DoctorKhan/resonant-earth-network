@@ -545,6 +545,227 @@ nav {
     display: block;
 }
 
+/* Business Model Page Specific Styles */
+.highlight-box {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    color: white !important;
+    padding: 2rem !important;
+    border-radius: 1rem !important;
+    text-align: center !important;
+    margin: 2rem 0 !important;
+    box-shadow: 0 8px 32px rgba(16, 185, 129, 0.3) !important;
+}
+
+.highlight-box h3 {
+    color: white !important;
+    margin-bottom: 1rem !important;
+}
+
+.highlight-box p {
+    color: white !important;
+    font-size: 1.2rem !important;
+    margin: 0 !important;
+}
+
+.revenue-card {
+    background: linear-gradient(135deg, #eff6ff, #dbeafe) !important;
+    border: 2px solid #3b82f6 !important;
+    padding: 1.5rem !important;
+    border-radius: 1rem !important;
+    margin-bottom: 1rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.revenue-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 32px rgba(59, 130, 246, 0.2) !important;
+}
+
+.revenue-card h3 {
+    color: #1e40af !important;
+    margin-bottom: 1rem !important;
+}
+
+.revenue-card ul {
+    list-style: disc !important;
+    padding-left: 1.5rem !important;
+    margin: 0 !important;
+}
+
+.revenue-card li {
+    color: #374151 !important;
+    margin-bottom: 0.5rem !important;
+    line-height: 1.6 !important;
+}
+
+/* Location cards */
+.location-card {
+    background: linear-gradient(135deg, #f0fdf4, #ecfdf5) !important;
+    border: 2px solid #10b981 !important;
+    padding: 2rem !important;
+    border-radius: 1rem !important;
+    transition: all 0.3s ease !important;
+    margin-bottom: 1.5rem !important;
+}
+
+.location-card:hover {
+    transform: scale(1.02) !important;
+    box-shadow: 0 20px 40px rgba(16, 185, 129, 0.2) !important;
+}
+
+.location-card h3 {
+    color: #065f46 !important;
+    margin-bottom: 1rem !important;
+}
+
+.location-card p, .location-card li {
+    color: #374151 !important;
+}
+
+/* Water Quality Page Specific Styles */
+.warning-card {
+    background: linear-gradient(135deg, #fef2f2, #fee2e2) !important;
+    border: 2px solid #dc2626 !important;
+    padding: 2rem !important;
+    border-radius: 1rem !important;
+    margin-bottom: 1.5rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.warning-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 32px rgba(220, 38, 38, 0.2) !important;
+}
+
+.warning-card h3 {
+    color: #dc2626 !important;
+    margin-bottom: 1rem !important;
+}
+
+.warning-card p, .warning-card li {
+    color: #7f1d1d !important;
+}
+
+.research-card {
+    background: linear-gradient(135deg, #eff6ff, #dbeafe) !important;
+    border: 2px solid #2563eb !important;
+    padding: 1.5rem !important;
+    border-radius: 1rem !important;
+    margin-bottom: 1rem !important;
+    transition: all 0.3s ease !important;
+}
+
+.research-card:hover {
+    transform: translateY(-4px) !important;
+    box-shadow: 0 12px 32px rgba(37, 99, 235, 0.2) !important;
+}
+
+.research-card h3 {
+    color: #1e40af !important;
+    margin-bottom: 1rem !important;
+}
+
+.research-card p, .research-card li {
+    color: #374151 !important;
+}
+
+.citation {
+    font-size: 0.9rem !important;
+    color: #6b7280 !important;
+    font-style: italic !important;
+    margin-top: 0.5rem !important;
+    padding: 0.5rem !important;
+    background: #f9fafb !important;
+    border-left: 4px solid #2563eb !important;
+    border-radius: 0 0.5rem 0.5rem 0 !important;
+}
+
+/* Utility Classes */
+.hero {
+    padding: 8rem 0 4rem !important;
+    text-align: center !important;
+}
+
+.section {
+    padding: 4rem 0 !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.max-w-4xl {
+    max-width: 56rem !important;
+}
+
+.mx-auto {
+    margin: 0 auto !important;
+}
+
+.flex {
+    display: flex !important;
+}
+
+.justify-between {
+    justify-content: space-between !important;
+}
+
+.items-center {
+    align-items: center !important;
+}
+
+.space-x-6 > * + * {
+    margin-left: 1.5rem !important;
+}
+
+/* Lists */
+ul {
+    list-style: disc !important;
+    padding-left: 1.5rem !important;
+    margin-bottom: 1rem !important;
+}
+
+li {
+    margin-bottom: 0.5rem !important;
+    color: #4b5563 !important;
+    line-height: 1.6 !important;
+}
+
+/* Links */
+a {
+    color: #2563eb !important;
+    text-decoration: none !important;
+    transition: color 0.2s !important;
+}
+
+a:hover {
+    color: #1d4ed8 !important;
+    text-decoration: underline !important;
+}
+
+/* Tables */
+table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin: 1rem 0 !important;
+    background: white !important;
+    border-radius: 0.5rem !important;
+    overflow: hidden !important;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05) !important;
+}
+
+th, td {
+    padding: 1rem !important;
+    text-align: left !important;
+    border-bottom: 1px solid #e5e7eb !important;
+}
+
+th {
+    background: #f9fafb !important;
+    font-weight: 600 !important;
+    color: #374151 !important;
+}
+
 /* Focus States for Accessibility */
 .nav-link:focus,
 .cta-button:focus,
