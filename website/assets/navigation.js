@@ -100,6 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 // Navigation HTML template - CONSISTENT ACROSS ALL PAGES
+// Standard order: Vision → Features → Palawan → Overview → Business → Water Quality → Tokenomics → Join Waitlist
 function createNavigation(currentPage = '') {
     return `
         <nav class="navbar">
@@ -132,7 +133,7 @@ function createNavigation(currentPage = '') {
                 <a href="index.html#features" class="mobile-nav-link">Features</a>
                 <a href="index.html#palawan" class="mobile-nav-link">Palawan</a>
                 <a href="overview.html" class="mobile-nav-link">Overview</a>
-                <a href="business-model.html" class="mobile-nav-link">Business Model</a>
+                <a href="business-model.html" class="mobile-nav-link">Business</a>
                 <a href="water-quality.html" class="mobile-nav-link">Water Quality</a>
                 <a href="tokenomics.html" class="mobile-nav-link">Tokenomics</a>
                 <a href="index.html#join" class="mobile-nav-link cta-button" style="margin: 1rem 2rem; text-align: center; border-radius: 2rem;">Join Waitlist</a>
